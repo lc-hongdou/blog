@@ -1,7 +1,7 @@
 ---
 title: FOC
 ---
-# 绪论 
+# 绪论
 
 ## Quick Start
 
