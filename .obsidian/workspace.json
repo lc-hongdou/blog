@@ -1,0 +1,190 @@
+{
+  "main": {
+    "id": "46ec1c64922acdb9",
+    "type": "split",
+    "children": [
+      {
+        "id": "f0fedb1250186ae3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9d5feeae9893156c",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": "source/_posts/hello-world.md",
+                "staged": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8382cecd0bb38b35",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a68efb50c4989f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "327624e3b2d79fdb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "86490d83a2fc5222",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4d51a57e7b40a1e2",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a53911e798837b64",
+    "type": "split",
+    "children": [
+      {
+        "id": "9311f25433e3c498",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2c7e0dabea56d9aa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e1c2d72580d98b60",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "061b563428c70e6a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "231ca563937e09e0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "22ddd35e8f383527",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 318.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "9d5feeae9893156c",
+  "lastOpenFiles": [
+    "source/_posts/FOC.md",
+    "source/_posts/hello-world.md",
+    "pnpm-lock.yaml",
+    "package.json",
+    "_config.yml",
+    "_config.nexmoe.yml",
+    "themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.js",
+    "themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.css",
+    "themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.js",
+    "themes/landscape/source/fancybox/helpers/jquery.fancybox-media.js",
+    "themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.css",
+    "themes/landscape/source/fancybox/helpers/fancybox_buttons.png",
+    "themes/landscape/source/css/_util/mixin.styl",
+    "themes/landscape/source/css/images/banner.jpg",
+    "themes/landscape/source/css/fonts/fontawesome-webfont.svg",
+    "themes/landscape/source/fancybox/fancybox_sprite@2x.png",
+    "themes/landscape/source/fancybox/fancybox_sprite.png",
+    "themes/landscape/source/fancybox/fancybox_overlay.png",
+    "themes/landscape/source/fancybox/fancybox_loading@2x.gif",
+    "themes/landscape/source/fancybox/fancybox_loading.gif",
+    "themes/landscape/source/fancybox/blank.gif",
+    "themes/landscape/README.md",
+    "scaffolds/post.md",
+    "scaffolds/page.md",
+    "scaffolds/draft.md",
+    "blog/themes/landscape/source/fancybox/helpers/fancybox_buttons.png",
+    "blog/themes/landscape/README.md",
+    "blog/source/_posts/hello-world.md",
+    "blog/scaffolds/post.md",
+    "blog/scaffolds/page.md",
+    "blog/scaffolds/draft.md",
+    "fcc.md",
+    "未命名 1.md",
+    "未命名 2.md",
+    "未命名 3.md"
+  ]
+}
