@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "scaffolds/post.md",
+                "file": "source/_posts/FOC.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "scaffolds/post.md",
+                "file": "source/_posts/FOC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "scaffolds/post.md",
+                "file": "source/_posts/FOC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "scaffolds/post.md"
+                "file": "source/_posts/FOC.md"
               }
             }
           },
@@ -156,10 +156,11 @@
   },
   "active": "327624e3b2d79fdb",
   "lastOpenFiles": [
+    "source/_posts/hello-world.md",
+    "source/_posts/FOC.md",
+    "scaffolds/post.md",
     "scaffolds/page.md",
     "scaffolds/draft.md",
-    "source/_posts/FOC.md",
-    "source/_posts/hello-world.md",
     "pnpm-lock.yaml",
     "package.json",
     "_config.yml",
@@ -180,7 +181,6 @@
     "themes/landscape/source/fancybox/fancybox_loading.gif",
     "themes/landscape/source/fancybox/blank.gif",
     "themes/landscape/README.md",
-    "scaffolds/post.md",
     "blog/themes/landscape/source/fancybox/helpers/fancybox_buttons.png",
     "blog/themes/landscape/README.md",
     "blog/source/_posts/hello-world.md",
