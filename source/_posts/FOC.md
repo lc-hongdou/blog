@@ -75,25 +75,25 @@ MOS:主控通过控制场效应管和逆变桥式电路来通断来生成SVPWM�
 ▌总结
 借助FOC优越的控制性能，使得机械臂等作业机构能够通过力控来更好地完成作业任务。当然，本文只是对FOC的核心思想和驱动器进行了简单的介绍，实际应用过程中的细节远不止此，如有机会我们以后探讨，敬请期待！ 作者：西湖大学空中机器人 https://www.bilibili.com/read/cv17289017 出处：bilibili
 
-### Create a new post
+### 六步换向
 
 ``` bash
 $ hexo new "My New Post"
 ```
 
-### Run server
+### 坐标变换
 
 ``` bash
 $ hexo server
 ```
 
-### Generate static files
+### SVPWM
 
 ``` bash
 $ hexo generate
 ```
 
-### Deploy to remote sites
+### 电流环
 
 ``` bash
 $ hexo deploy
