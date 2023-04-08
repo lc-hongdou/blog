@@ -112,7 +112,6 @@ admin:
 
 # hexo-admin默认参数
 metadata:
-  author_id: defaultAuthorId
   language: C
   comments: true
 
