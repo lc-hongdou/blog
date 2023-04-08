@@ -1,5 +1,8 @@
 ---
 title: FOC
+date: 2023-04-08 10:13:20
+mathjax: true
+
 ---
 ## 绪论
 
@@ -95,6 +98,7 @@ $ hexo generate
 
 ### 电流环
 
-``` bash
-$ hexo deploy
-```
+
+$$\begin{equation} \label{eq1}
+e=mc^2
+\end{equation}$$

@@ -5,11 +5,14 @@
 # Site
 title: 红豆椰汁西米露
 subtitle: '海绵饱饱'
-description: '一个技术小白的blog'
-keywords:
-author: lc-hongdou
-language: cn
+#站点描述
+description: '一个技术小白的个人博客'
+keywords: FOC
+#作者昵称
+author: 深藏Blue
+language: zh-CN
 timezone: ''
+
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -46,7 +49,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace: ''
   wrap: true
   hljs: false
@@ -97,9 +100,38 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: nexmoe
+theme: next
+
+# hexo-admin authentification
+admin:
+  username: hongdou
+  password_hash: $2a$10$0QHcEqeXTW2Bmco92eT0Z.N2btrr0JBIM9/JyjRW1RipAUM0mN1jK
+  secret: zxcvbnm7410
+  deployCommand: ‘hexo-publish.bat'
+#  deployCommand: './admin_script.sh'
+
+# hexo-admin默认参数
+metadata:
+  author_id: defaultAuthorId
+  language: C
+  comments: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 'github'
+  repository:  https://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@github.com/lc-hongdou/blog.git
+  branch: main
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+symbols_count_time:
+  symbols: true #是否统计字数
+  time: false #是否统计阅读时长
+  total_symbols: true #是否统计总字数
+  total_time: false #是否统计总阅读时长
+
