@@ -150,6 +150,7 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "_tmp_18856_c100bb61e7a2cec8e39409ce75cd3ceb",
     "db.json",
     "public/lib/font-awesome/webfonts/fa-solid-900.woff2",
     "public/lib/font-awesome/webfonts/fa-regular-400.woff2",
@@ -162,7 +163,6 @@
     "public/lib/velocity",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
-    "public/js/schemes/pisces.js",
     "public/images/favicon-16x16-next.png",
     "public/images/cc-by.svg",
     "public/images/cc-zero.svg",
