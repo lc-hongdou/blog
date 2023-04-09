@@ -110,7 +110,9 @@ $$\begin{equation} \label{eq1}
 e=mc^2
 \end{equation}$$
 
-
+$$
+i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi
+$$
 
 $\ce{CO2 + C -> 2 CO}$
 
