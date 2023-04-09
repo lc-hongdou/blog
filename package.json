@@ -35,6 +35,7 @@
     "hexo-generator-index-pin-top": "^0.2.2",
     "hexo-generator-searchdb": "^1.4.1",
     "hexo-generator-tag": "^1.0.0",
+    "hexo-helper-live2d": "^3.1.1",
     "hexo-log": "^4.0.1",
     "hexo-related-popular-posts": "^5.0.1",
     "hexo-renderer-ejs": "^1.0.0",
