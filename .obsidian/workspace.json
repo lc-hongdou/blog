@@ -150,6 +150,7 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "themes/themes.lnk",
     "package.json.2539066500",
     "pnpm-lock.yaml.212349992",
     "_tmp_8944_fa401eadccc8afa1d477d80697ba18d8",
@@ -164,7 +165,6 @@
     "public/js/utils.js",
     "public/css/main.css",
     "public/js/motion.js",
-    "public/js/local-search.js",
     "public/images/favicon-32x32-next.png",
     "public/images/logo.svg",
     "public/images/favicon-16x16-next.png",
