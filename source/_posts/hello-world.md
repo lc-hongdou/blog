@@ -11,6 +11,10 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 $ hexo new "My New Post"
 ```
 
+![qwe](https://i.loli.net/2018/02/09/5a7d6a402e15e.jpg)
+
+![测试4](/picture/1.jpg)
+
 More info: [Writing](https://hexo.io/docs/writing.html)
 
 ### Run server
