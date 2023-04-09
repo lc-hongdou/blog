@@ -1,4 +1,6 @@
 {
   "cssTheme": "Obsidian Nord",
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "accentColor": "",
+  "interfaceFontFamily": "等线"
 }

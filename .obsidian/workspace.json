@@ -4,22 +4,29 @@
     "type": "split",
     "children": [
       {
-        "id": "f0fedb1250186ae3",
+        "id": "16d7c889a5c72ef4",
         "type": "tabs",
         "children": [
           {
-            "id": "9d5feeae9893156c",
+            "id": "ff866e3f24118294",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "27a1d1958c1578f9",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
               "state": {
-                "file": "source/_posts/FOC.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/系统流程图.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/FOC.md",
+                "file": "Excalidraw/系统流程图.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +109,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/FOC.md",
+                "file": "Excalidraw/系统流程图.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +132,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/FOC.md"
+                "file": "Excalidraw/系统流程图.md"
               }
             }
           },
@@ -151,13 +158,18 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false
     }
   },
-  "active": "327624e3b2d79fdb",
+  "active": "27a1d1958c1578f9",
   "lastOpenFiles": [
-    "source/_posts/hello-world.md",
+    "Excalidraw/系统流程图.md",
+    "未命名.md",
+    "Excalidraw/Clark变换.md",
+    "Excalidraw/FOC整体框图.md",
     "source/_posts/FOC.md",
+    "source/_posts/hello-world.md",
     "scaffolds/post.md",
     "scaffolds/page.md",
     "scaffolds/draft.md",
