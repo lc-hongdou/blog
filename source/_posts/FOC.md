@@ -111,5 +111,5 @@ e=mc^2
 \end{equation}$$
 
 $$\begin{equation} \label{eq1}
-e=sin^2
+e=sin60^2
 \end{equation}$$
