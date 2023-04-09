@@ -150,6 +150,8 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "package.json.2573415946",
+    "pnpm-lock.yaml.3975156887",
     "_tmp_19316_31f27ee521ece957fc3ca7d9faeaa5ce",
     "_tmp_18856_c100bb61e7a2cec8e39409ce75cd3ceb",
     "db.json",
@@ -159,8 +161,6 @@
     "public/lib/font-awesome/webfonts",
     "public/css/main.css",
     "public/css",
-    "public/lib/velocity/velocity.ui.min.js",
-    "public/lib/velocity/velocity.min.js",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
     "public/images/favicon-16x16-next.png",
