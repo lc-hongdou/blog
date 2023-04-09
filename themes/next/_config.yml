@@ -860,7 +860,6 @@ motion:
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
 # For more information: https://github.com/HubSpot/pace
-#pace-theme-mac-osx
 
 #pace:
 #  enable: false
