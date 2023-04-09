@@ -18,6 +18,7 @@ FOC（Field-Oriented Control），即磁场定向控制，也称矢量变频，�
 
 ![图1.FOC机械臂应用	图2.FOC机械人应用](https://i0.hdslb.com/bfs/article/db010619e98e39b5893894306e04e9c642c0353e.png@942w_393h_progressive.webp)
 
+{% dplayer “url=https://什么什么什么.mp4” “https://封面图.jpg” “api=https://api.prprpr.me/dplayer/” “id=” “loop=false” %}
 
  <!-- more -->
 
