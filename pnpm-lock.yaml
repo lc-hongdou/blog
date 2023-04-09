@@ -30,6 +30,7 @@ specifiers:
   hexo-server: ^2.0.0
   hexo-symbols-count-time: ^0.7.1
   hexo-util: ^3.0.1
+  live2d-widget-model-shizuku: ^1.0.5
   lodash: ^4.17.21
   nunjucks: ^3.2.3
   object-assign: ^4.1.1
@@ -65,6 +66,7 @@ dependencies:
   hexo-server: 2.0.0
   hexo-symbols-count-time: 0.7.1
   hexo-util: 3.0.1
+  live2d-widget-model-shizuku: 1.0.5
   lodash: 4.17.21
   nunjucks: 3.2.3_chokidar@3.5.3
   object-assign: 4.1.1
@@ -2970,6 +2972,10 @@ packages:
     resolution: {integrity: sha512-ntJ8IcBCuKwudML7vAuT/L0aIMU0+9vO25K4CjLPYgzf1NZ0bAhJJBZrvkO+oUGgKcbdkH8UZdRsaEg+wULLRw==}
     dependencies:
       astw: 2.2.0
+    dev: false
+
+  /live2d-widget-model-shizuku/1.0.5:
+    resolution: {integrity: sha512-keEQR1Bm7HILLjNSIpmg1SGuo4H/ZsGRxnBn0l0BxgEbaHlmEE+Jb5nwhAtnh7PN/SRFE3+Ddk/ciy18sT7rAw==}
     dev: false
 
   /lodash.memoize/3.0.4:
