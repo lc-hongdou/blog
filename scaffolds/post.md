@@ -11,6 +11,6 @@ comments: true  # false/true 关闭文章底部Valine评论功能
 
 ---
 
-{% pdf /path/to/your/file.pdf %}
-
 <meta name="referrer" content="no-referrer"/>
+
+
