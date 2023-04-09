@@ -150,6 +150,8 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "package.json.2539066500",
+    "pnpm-lock.yaml.212349992",
     "_tmp_8944_fa401eadccc8afa1d477d80697ba18d8",
     "db.json",
     "public/uploads/avatar.png",
@@ -163,8 +165,6 @@
     "public/css/main.css",
     "public/js/motion.js",
     "public/js/local-search.js",
-    "public/js/fireworks.js",
-    "public/js/schemes/pisces.js",
     "public/images/favicon-32x32-next.png",
     "public/images/logo.svg",
     "public/images/favicon-16x16-next.png",
