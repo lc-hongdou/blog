@@ -11,11 +11,9 @@
             "id": "ff866e3f24118294",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "source/_posts/FOC.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/系统流程图.md"
               }
             }
           }
@@ -86,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/FOC.md",
+                "file": "Excalidraw/系统流程图.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/FOC.md",
+                "file": "Excalidraw/系统流程图.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/FOC.md"
+                "file": "Excalidraw/系统流程图.md"
               }
             }
           },
@@ -158,6 +156,8 @@
   },
   "active": "ff866e3f24118294",
   "lastOpenFiles": [
+    "Excalidraw/系统流程图.png",
+    "source/_posts/FOC.md",
     "db.json",
     "public/uploads/avatar.png",
     "public/uploads",
@@ -178,14 +178,12 @@
     "public/images/cc-by-nc-sa.svg",
     "public/css/injector/light.css",
     "public/index.html",
-    "public/lib/canvas-nest/README.html",
     "scaffolds/draft.md",
     "scaffolds/post.md",
     "Excalidraw/FOC整体框图.md",
     "Excalidraw/Clark变换.md",
     "Excalidraw/系统流程图.md",
     "未命名.md",
-    "source/_posts/FOC.md",
     "source/_posts/hello-world.md",
     "scaffolds/page.md",
     "themes/landscape/README.md",
