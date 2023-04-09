@@ -127,3 +127,8 @@ $\ce{CO2 + C -> 2 CO}$
 \nabla\times\vec{E}&=&-\frac{\partial B}{\partial t}\\\\
 \nabla\times\vec{B}&=&\mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t}\right)\\\\
 \end{eqnarray\*}
+
+-$ \epsilon_0 $
++$\epsilon_0$
+-$ \frac{\partial}{\partial t} $
++$\frac{\partial}{\partial t}$
