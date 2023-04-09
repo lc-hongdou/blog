@@ -41,7 +41,7 @@
     <span title="{{ __('symbols_count_time.time_total') }}">{{ symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
   {%- endif %}
 </div>
-<!--去掉驱动-->
+<!--去掉强力驱动-->
 <!--{%- if theme.footer.powered %}
   <div class="powered-by">
     {%- set next_site = 'https://theme-next.org' %}
