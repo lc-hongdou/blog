@@ -82,7 +82,7 @@ footer:
 # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
 creative_commons: #添加文章版权信息
   license: by-nc-sa
-  sidebar: false
+  sidebar: false # 侧边栏
   post: true
   language: deed.zh
 
@@ -97,9 +97,8 @@ scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
 
-# Dark Mode
+# Dark Mode  #暗模式：真
 darkmode: false
-#darkmode: true
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -110,7 +109,6 @@ darkmode: false
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
-#设置 菜单
 menu:
   home: / || fa fa-home
   categories: /categories/ || fa fa-th
@@ -166,7 +164,7 @@ avatar:
 # If true, the avatar would be dispalyed in circle.
   rounded: false #头像是否设为圆形，否则为矩形
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
-  opacity: 1 #头像放缩指数
+  opacity: 1 #透明度
   # If true, the avatar would be rotated with the cursor.
   rotated: false #鼠标放在头像上时是否旋转
 
@@ -178,9 +176,7 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
   GitHub: https://github.com/lc-hongdou || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   E-Mail: 379535454@qq.com || fa fa-envelope
   Gitee: https://gitee.com/ljs_ice || fab fa-git
   #Weibo: https://weibo.com/yourname || fab fa-weibo
@@ -219,7 +215,7 @@ toc:
   # Automatically add list number to toc.
   number: true #目录是否自动产生编号
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false #标题过长是否换行
+  wrap: true #标题过长是否换行
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: true
   # Maximum heading depth of generated toc.
@@ -227,10 +223,10 @@ toc:
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
-chat:
-  enable: false
-  #service: chatra
-  #service: tidio
+chat:  #聊天机器人
+  enable: true
+#  service: chatra
+  service: tidio
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
 
@@ -241,11 +237,11 @@ chat:
 # ---------------------------------------------------------------
 
 # Automatically excerpt description in homepage as preamble text.
-excerpt_description: true
+excerpt_description: true #自动摘录主页中的描述作为序言文本。
 
 # Read more button
 # If true, the read more button will be displayed in excerpt section.
-read_more_btn: true
+read_more_btn: true #阅读更多按钮
 
 # Post meta display settings
 post_meta:
@@ -266,11 +262,12 @@ symbols_count_time:
   wpm: 300 #words per minute
   
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
+#使用图标而不是符号#来指示帖子底部的标签
 tag_icon: true
 
 # Reward (Donate)
 # Front-matter variable (unsupport animation).
-reward_settings:
+reward_settings: # 爱发电
   # If true, reward will be displayed in every article by default.
   enable: false
   animation: false
@@ -288,8 +285,8 @@ follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-  RSS: /atom.xml || fa fa-rss
-
+  #RSS: /atom.xml || fa fa-rss
+  RSS:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 # 显示最近博客 :一个hexo插件，它生成到相关帖子或热门帖子的链接列表
