@@ -619,8 +619,7 @@ disqusjs:
   # api: https://disqus.skk.moe/disqus/
   api: 8JhLCNuiLTnx8bF6olsZX6AugBhFfuFCLmkRZak8V3p2Y6JCQvSrv8KLtMM8PR3P
   apikey: eY7847tguEwbbG23CQvDPxwoCXPutUbpXnxUYOPWX3UVLd4GUOkOP8BMGwUMa2eq # Register new application from https://disqus.com/api/applications/
-  shortname: 
-lc-hongdou-cn # See: https://disqus.com/admin/settings/general/
+  shortname: lc-hongdou-cn # See: https://disqus.com/admin/settings/general/
 
 # Changyan
 changyan:
