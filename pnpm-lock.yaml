@@ -25,6 +25,7 @@ specifiers:
   hexo-generator-index-pin-top: ^0.2.2
   hexo-generator-searchdb: ^1.4.1
   hexo-generator-tag: ^1.0.0
+  hexo-next-utteranc: github:theme-next/hexo-next-utteranc
   hexo-related-popular-posts: ^5.0.1
   hexo-renderer-ejs: ^1.0.0
   hexo-renderer-pandoc: ^0.3.1
@@ -62,6 +63,7 @@ dependencies:
   hexo-generator-index-pin-top: 0.2.2
   hexo-generator-searchdb: 1.4.1_chokidar@3.5.3
   hexo-generator-tag: 1.0.0
+  hexo-next-utteranc: github.com/theme-next/hexo-next-utteranc/f592272a73cb47923f25443709786942f0398a69
   hexo-related-popular-posts: 5.0.1
   hexo-renderer-ejs: 1.0.0
   hexo-renderer-pandoc: 0.3.1
@@ -2869,6 +2871,14 @@ packages:
       minimatch: 3.1.2
     dev: false
 
+  /js-yaml/3.14.0:
+    resolution: {integrity: sha512-/4IbIeHcD9VMHFqDR/gQ7EdZdLimOvW2DdcxFjdyyZ9NsbS+ccrXqVWDtab/lRl5AlUqmpBx8EhPaWR+OtY17A==}
+    hasBin: true
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: false
+
   /js-yaml/3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
     hasBin: true
@@ -3007,6 +3017,10 @@ packages:
 
   /lodash/3.10.1:
     resolution: {integrity: sha512-9mDDwqVIma6OZX79ZlDACZl8sBm0TEnkf99zV3iMA4GzkIT/9hiqP5mY0HoT1iNLCrKc/R1HByV+yJfRWVJryQ==}
+    dev: false
+
+  /lodash/4.17.19:
+    resolution: {integrity: sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==}
     dev: false
 
   /lodash/4.17.21:
@@ -3313,6 +3327,13 @@ packages:
   /negotiator/0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /next-util/1.2.1:
+    resolution: {integrity: sha512-zhCYOcosgFHKjs9KldRnGCTDCmnjGmV71G8MqfKtqze2ixBnj3/xbABB46AepUJnjBVce6jgZRN6m4YpyQWlpQ==}
+    dependencies:
+      js-yaml: 3.14.0
+      lodash: 4.17.19
     dev: false
 
   /nib/1.2.0_stylus@0.57.0:
@@ -4683,8 +4704,16 @@ packages:
     resolution: {integrity: sha512-+J9RrgTKOmlxFSDHo0pI1xM6BLVUv+o0ZT9ANtCxGkjIVCCUdx9alUF8Gm+dGLKbkkkidWIHFDZHDMpfITt4+w==}
     dev: false
 
+  github.com/theme-next/hexo-next-utteranc/f592272a73cb47923f25443709786942f0398a69:
+    resolution: {commit: f592272a73cb47923f25443709786942f0398a69, repo: git+ssh://git@github.com/theme-next/hexo-next-utteranc.git, type: git}
+    name: hexo-next-utteranc
+    version: 1.0.0
+    dependencies:
+      next-util: 1.2.1
+    dev: false
+
   github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222:
-    resolution: {tarball: https://codeload.github.com/theme-next/theme-next-calendar/tar.gz/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222}
+    resolution: {commit: 4de1d42ae3fff83a1aaae5d4f01ffc29444e4222, repo: git+ssh://git@github.com/theme-next/theme-next-calendar.git, type: git}
     name: hexo-generator-calendar
     version: 0.0.1
     dependencies:
