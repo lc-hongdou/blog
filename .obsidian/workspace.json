@@ -164,6 +164,8 @@
   },
   "active": "327624e3b2d79fdb",
   "lastOpenFiles": [
+    "package.json.1574951312",
+    "pnpm-lock.yaml.3510600138",
     "_tmp_19184_9fbcfe28769f4ec070b8edfaf41f6013",
     "Excalidraw/Clark变换.md",
     "Excalidraw/系统流程图.png",
@@ -184,8 +186,6 @@
     "_config.yml",
     "_config.nexmoe.yml",
     "themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.js",
-    "themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.css",
-    "themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.js",
     "themes/landscape/source/fancybox/helpers/fancybox_buttons.png",
     "themes/landscape/source/css/images/banner.jpg",
     "themes/landscape/source/css/fonts/fontawesome-webfont.svg",
