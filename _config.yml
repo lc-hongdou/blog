@@ -23,10 +23,10 @@ url: http://lc-hongdou.cn
 #  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
 #  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 permalink: :year/:month/:day/:abbrlink.html
-permalink_defaults: :year/:month/:day/:title/
+#permalink_defaults: :year/:month/:day/:title/
 pretty_urls: 
-trailing_index: false # Set to false to remove trailing ‘index.html’ from permalinks
-trailing_html: false # Set to false to remove trailing ‘.html’ from permalinks
+trailing_index: true # Set to false to remove trailing ‘index.html’ from permalinks
+trailing_html: true # Set to false to remove trailing ‘.html’ from permalinks
 abbrlink:
     alg: crc32   #算法： crc16(default) and crc32
     rep: hex     #进制： dec(default) and hex
