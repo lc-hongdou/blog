@@ -387,6 +387,7 @@ back2top:
   scrollpercent: true
 
 # Reading progress bar
+#读取进度条
 reading_progress:
   enable: true
   # Available values: top | bottom
