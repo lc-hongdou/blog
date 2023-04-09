@@ -158,6 +158,8 @@
   },
   "active": "ff866e3f24118294",
   "lastOpenFiles": [
+    "package.json.722997840",
+    "pnpm-lock.yaml.877687745",
     "_tmp_14840_9562bbc05720c0d95dca37959abb0b57",
     "scaffolds/draft.md",
     "scaffolds/post.md",
@@ -178,8 +180,6 @@
     "source/_posts/hello-world.md",
     "scaffolds/page.md",
     "pnpm-lock.yaml",
-    "package.json",
-    "_config.yml",
     "themes/landscape/source/fancybox/helpers/fancybox_buttons.png",
     "themes/landscape/source/css/images/banner.jpg",
     "themes/landscape/source/css/fonts/fontawesome-webfont.svg",
