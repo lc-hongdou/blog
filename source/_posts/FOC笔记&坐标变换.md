@@ -1,11 +1,11 @@
----
 title: FOC笔记&坐标变换
 author: 深藏Blue
-tags: [FOC,笔记]
+tags:
+  - FOC
+  - 笔记
 categories: []
 language: cn
 date: 2023-04-08 01:33:00
-
 ---
 
 # 坐标变换
