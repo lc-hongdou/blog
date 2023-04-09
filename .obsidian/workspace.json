@@ -164,6 +164,7 @@
   },
   "active": "27a1d1958c1578f9",
   "lastOpenFiles": [
+    "Excalidraw/data-viz.excalidrawlib",
     "Excalidraw/drwnio.excalidrawlib",
     "Excalidraw/系统流程图.md",
     "未命名.md",
@@ -184,7 +185,6 @@
     "themes/landscape/source/fancybox/helpers/jquery.fancybox-media.js",
     "themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.css",
     "themes/landscape/source/fancybox/helpers/fancybox_buttons.png",
-    "themes/landscape/source/css/_util/mixin.styl",
     "themes/landscape/source/css/images/banner.jpg",
     "themes/landscape/source/css/fonts/fontawesome-webfont.svg",
     "themes/landscape/source/fancybox/fancybox_sprite@2x.png",
