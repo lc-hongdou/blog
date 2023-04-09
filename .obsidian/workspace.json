@@ -150,6 +150,8 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "package.json.960287888",
+    "pnpm-lock.yaml.602685363",
     "_tmp_13452_64d075df22d864aef22d14428a5bb03c",
     "db.json",
     "public/css/injector/light.css",
@@ -169,8 +171,6 @@
     "public/images/cc-by-nd.svg",
     "public/images/cc-by-nc-sa.svg",
     "public/images/avatar.gif",
-    "public/css/injector/dark.css",
-    "public/index.html",
     "source/_posts/FOC.md",
     "Excalidraw/系统流程图.md",
     "scaffolds/draft.md",
