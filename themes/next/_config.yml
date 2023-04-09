@@ -82,7 +82,7 @@ footer:
 # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
 creative_commons: #添加文章版权信息
   license: by-nc-sa
-  sidebar: true
+  sidebar: false
   post: true
   language: deed.zh
 
