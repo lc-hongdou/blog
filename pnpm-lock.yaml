@@ -18,6 +18,7 @@ specifiers:
   hexo-filter-mermaid-diagrams: ^1.0.5
   hexo-fs: ^4.1.1
   hexo-generator-archive: ^1.0.0
+  hexo-generator-calendar: github:theme-next/theme-next-calendar
   hexo-generator-category: ^1.0.0
   hexo-generator-feed: ^3.0.0
   hexo-generator-index: ^3.0.0
@@ -54,6 +55,7 @@ dependencies:
   hexo-filter-mermaid-diagrams: 1.0.5
   hexo-fs: 4.1.1
   hexo-generator-archive: 1.0.0
+  hexo-generator-calendar: github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222
   hexo-generator-category: 1.0.0
   hexo-generator-feed: 3.0.0_chokidar@3.5.3
   hexo-generator-index: 3.0.0
@@ -4679,4 +4681,12 @@ packages:
 
   /zlibjs/0.3.1:
     resolution: {integrity: sha512-+J9RrgTKOmlxFSDHo0pI1xM6BLVUv+o0ZT9ANtCxGkjIVCCUdx9alUF8Gm+dGLKbkkkidWIHFDZHDMpfITt4+w==}
+    dev: false
+
+  github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222:
+    resolution: {tarball: https://codeload.github.com/theme-next/theme-next-calendar/tar.gz/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222}
+    name: hexo-generator-calendar
+    version: 0.0.1
+    dependencies:
+      object-assign: 4.1.1
     dev: false
