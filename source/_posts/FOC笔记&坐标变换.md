@@ -1,3 +1,4 @@
+---
 title: FOC笔记&坐标变换
 author: 深藏Blue
 tags:
@@ -5,6 +6,7 @@ tags:
   - 笔记
 categories: []
 language: cn
+abbrlink: 95292746
 date: 2023-04-08 01:33:00
 ---
 
