@@ -23,7 +23,6 @@ specifiers:
   hexo-generator-index-pin-top: ^0.2.2
   hexo-generator-searchdb: ^1.4.1
   hexo-generator-tag: ^1.0.0
-  hexo-log: ^4.0.1
   hexo-related-popular-posts: ^5.0.1
   hexo-renderer-ejs: ^1.0.0
   hexo-renderer-pandoc: ^0.3.1
@@ -59,7 +58,6 @@ dependencies:
   hexo-generator-index-pin-top: 0.2.2
   hexo-generator-searchdb: 1.4.1_chokidar@3.5.3
   hexo-generator-tag: 1.0.0
-  hexo-log: 4.0.1
   hexo-related-popular-posts: 5.0.1
   hexo-renderer-ejs: 1.0.0
   hexo-renderer-pandoc: 0.3.1
@@ -67,11 +65,9 @@ dependencies:
   hexo-server: 2.0.0
   hexo-symbols-count-time: 0.7.1
   hexo-util: 3.0.1
-  live2d-widget-model-shizuku: 1.0.5
   lodash: 4.17.21
   nunjucks: 3.2.3_chokidar@3.5.3
   object-assign: 4.1.1
-  picocolors: 1.0.0
   serve-static: 1.15.0
 
 packages:
@@ -2269,13 +2265,6 @@ packages:
       picocolors: 1.0.0
     dev: false
 
-  /hexo-log/4.0.1:
-    resolution: {integrity: sha512-jB2EADDJIwtepfUxiNCTN/5Ysa0B7vYMzkih69FAiubXcnMomKgx5WOlqODVfKnXYw0OQk1Fxrf5LVmfpR0i8w==}
-    engines: {node: '>=14'}
-    dependencies:
-      picocolors: 1.0.0
-    dev: false
-
   /hexo-pagination/0.0.2:
     resolution: {integrity: sha512-4kSEfk+f1xX9UkLiFR0u1/uLombK7xiTcKcESkYTFc9GioeG8ORGe2IRaYF0meScMk5pDDTTmq73uZAuzpsgwg==}
     engines: {node: '>= 0.10.0'}
@@ -2981,10 +2970,6 @@ packages:
     resolution: {integrity: sha512-ntJ8IcBCuKwudML7vAuT/L0aIMU0+9vO25K4CjLPYgzf1NZ0bAhJJBZrvkO+oUGgKcbdkH8UZdRsaEg+wULLRw==}
     dependencies:
       astw: 2.2.0
-    dev: false
-
-  /live2d-widget-model-shizuku/1.0.5:
-    resolution: {integrity: sha512-keEQR1Bm7HILLjNSIpmg1SGuo4H/ZsGRxnBn0l0BxgEbaHlmEE+Jb5nwhAtnh7PN/SRFE3+Ddk/ciy18sT7rAw==}
     dev: false
 
   /lodash.memoize/3.0.4:
