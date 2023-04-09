@@ -10,7 +10,7 @@ mathjax: true
 
 <meta name="referrer" content="no-referrer"/>
 
-## 绪论
+## 绪论:sparkles:
 
 **▌什么是FOC控制？**
 

@@ -162,3 +162,9 @@ feed:
 
 # 配置 RSS订阅 插件
 plugins: hexo-generate-feed
+
+emoji:
+  enable: true
+  className: github-emoji
+  styles:
+  customEmojis:

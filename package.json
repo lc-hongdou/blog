@@ -26,6 +26,7 @@
     "hexo-cake-moon-menu": "^2.5.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-extend-injector2": "^0.3.1",
+    "hexo-filter-emoji": "^2.2.2",
     "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-fs": "^4.1.1",
     "hexo-generator-archive": "^1.0.0",
