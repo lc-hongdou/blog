@@ -116,6 +116,10 @@ $$
 
 $\ce{CO2 + C -> 2 CO}$
 
+-$ \epsilon_0 $
++$\epsilon_0$
+-$ \frac{\partial}{\partial t} $
++$\frac{\partial}{\partial t}$
 
 \begin{eqnarray\*}
 \nabla\cdot\vec{E}&=&\frac{\rho}{\epsilon_0}\\\\
