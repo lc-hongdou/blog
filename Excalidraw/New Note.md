@@ -1,5 +1,5 @@
 ---
-title: 
+title: <% tp.file.title %>
 date: {{ date }}
 top:   # 文章是否置顶
 tags:  # 标签  配置 1.单个"" 2.多个 [] 按","号分割 3.多个- 按行
