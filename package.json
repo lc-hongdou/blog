@@ -23,7 +23,6 @@
     "hexo": "^5.0.0",
     "hexo-admin": "^2.3.0",
     "hexo-asset-image": "^1.0.0",
-    "hexo-cake-moon-menu": "^2.5.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-extend-injector2": "^0.3.1",
     "hexo-filter-emoji": "^2.2.2",

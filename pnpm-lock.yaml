@@ -11,7 +11,6 @@ specifiers:
   hexo: ^5.0.0
   hexo-admin: ^2.3.0
   hexo-asset-image: ^1.0.0
-  hexo-cake-moon-menu: ^2.5.0
   hexo-deployer-git: ^4.0.0
   hexo-extend-injector2: ^0.3.1
   hexo-filter-emoji: ^2.2.2
@@ -47,7 +46,6 @@ dependencies:
   hexo: 5.4.2_chokidar@3.5.3
   hexo-admin: 2.3.0
   hexo-asset-image: 1.0.0
-  hexo-cake-moon-menu: 2.5.0
   hexo-deployer-git: 4.0.0_chokidar@3.5.3
   hexo-extend-injector2: 0.3.1
   hexo-filter-emoji: 2.2.2
@@ -2089,14 +2087,6 @@ packages:
     dependencies:
       cheerio: 0.19.0
       entities: 1.1.2
-    dev: false
-
-  /hexo-cake-moon-menu/2.5.0:
-    resolution: {integrity: sha512-Y0uhcJlyaamQWG4zIyFinMhAk0bYDSR1MV/vfCzU6KTfzHasstmjhmrlg/hugYLpSDd2w4oLCG1+zVhMaPJJpQ==}
-    dependencies:
-      ejs: 3.1.9
-      hexo-extend-injector2: 0.3.1
-      hexo-util: 2.7.0
     dev: false
 
   /hexo-cli/4.3.0:
@@ -4670,7 +4660,7 @@ packages:
     dev: false
 
   github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222:
-    resolution: {tarball: https://codeload.github.com/theme-next/theme-next-calendar/tar.gz/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222}
+    resolution: {commit: 4de1d42ae3fff83a1aaae5d4f01ffc29444e4222, repo: git+ssh://git@github.com/theme-next/theme-next-calendar.git, type: git}
     name: hexo-generator-calendar
     version: 0.0.1
     dependencies:
