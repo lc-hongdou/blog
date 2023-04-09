@@ -1044,3 +1044,11 @@ background_music: //music.163.com/outchain/player?type=2&id=1934213146&auto=1&he
 # - //music.163.com/outchain/player?type=2&id=411214279&auto=1&height=66
 # - //music.163.com/outchain/player?type=2&id=1934213146&auto=1&height=66
 
+CloudCalendar:
+  enable: true
+  language: zh-CN
+  single: true
+  root: /calendar/
+  calendarCdn: //cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js
+  langCdn: //cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js
+  #disableSidebar: false
