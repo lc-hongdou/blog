@@ -1023,15 +1023,16 @@ js: js
 images: images
 
 #moon-cake 进度显示和上下滑动
-moon_menu:
-  back2top:
-    enable: true
-    icon: fas fa-chevron-up
-    order: -1
-  back2bottom:
-    enable: true
-    icon: fas fa-chevron-down
-    order: -2
+#hexo-cake-moon-menu
+#moon_menu:
+#  back2top:
+#    enable: true
+#    icon: fas fa-chevron-up
+#    order: -1
+#  back2bottom:
+#    enable: true
+#    icon: fas fa-chevron-down
+#    order: -2
 
 # Fireworks #鼠标点击特效
 fireworks: true
