@@ -285,21 +285,29 @@ follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-  #RSS: /atom.xml || fa fa-rss
-  RSS:
+  RSS: /atom.xml || fa fa-rss
+
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 # 显示最近博客 :一个hexo插件，它生成到相关帖子或热门帖子的链接列表
 related_posts:
   enable: true # false/true
   title: # Custom header, leave empty to use the default one ,自定义页眉，保留为空以使用默认页眉
-  display_in_home: false
+  display_in_home: true
   params:
     maxCount: 5
     #PPMixingRate: 0.0
     #isDate: false
     #isImage: false
     #isExcerpt: false
+
+# 近期文章设置
+recent_posts_title: 近期文章
+recent_posts_layout: block
+recent_posts: true
+
+
+
 
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
@@ -1042,8 +1050,4 @@ background_music: //music.163.com/outchain/player?type=2&id=1934213146&auto=1&he
 # - //music.163.com/outchain/player?type=2&id=411214279&auto=1&height=66
 # - //music.163.com/outchain/player?type=2&id=1934213146&auto=1&height=66
 
-# 近期文章设置
-recent_posts_title: 近期文章
-recent_posts_layout: block
-recent_posts: true
 

@@ -1,13 +1,13 @@
 ---
 title: FOC
-date: 2023-04-08 10:13:20
 top: 2
 tags: FOC
 mathjax: true
-
+abbrlink: 325217155
+date: 2023-04-08 10:13:20
 ---
 
-
+  
 <meta name="referrer" content="no-referrer"/>
 
 ## 绪论:sparkles:
