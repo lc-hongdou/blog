@@ -1,7 +1,7 @@
 ---
 title: <% tp.file.title %>
 date: <% tp.file.creation_date() %>
-top:   # 文章是否置顶
+top:   
 tags:  # 标签  配置 1.单个"" 2.多个 [] 按","号分割 3.多个- 按行
     - 
 categories: ""  # 分类 配置 1.单个"" 2.多个 [] 按","号分割 3.多个- 按行
