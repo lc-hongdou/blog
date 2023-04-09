@@ -9,6 +9,7 @@ specifiers:
   ejs: ^3.1.9
   graceful-fs: ^4.2.11
   hexo: ^5.0.0
+  hexo-abbrlink: ^2.2.1
   hexo-admin: ^2.3.0
   hexo-asset-image: ^1.0.0
   hexo-deployer-git: ^4.0.0
@@ -45,6 +46,7 @@ dependencies:
   ejs: 3.1.9
   graceful-fs: 4.2.11
   hexo: 5.4.2_chokidar@3.5.3
+  hexo-abbrlink: 2.2.1
   hexo-admin: 2.3.0
   hexo-asset-image: 1.0.0
   hexo-deployer-git: 4.0.0_chokidar@3.5.3
@@ -2062,6 +2064,13 @@ packages:
       sntp: 1.0.9
     dev: false
 
+  /hexo-abbrlink/2.2.1:
+    resolution: {integrity: sha512-yvazN7bbrIb7p8QU3nJ/8fbDmir1mFroYvUYcJz5xpc6DtszKggschmqZg6WNUdjhDBFyDwksrIUfwQnw0OOuA==}
+    dependencies:
+      hexo-front-matter: 1.0.0
+      hexo-fs: 3.1.0
+    dev: false
+
   /hexo-admin/2.3.0:
     resolution: {integrity: sha512-dbfy2AugRql+7uuEkefcPiByWumPMr7er/5wTxEsCwOQjSlidpHpwryuUUuSfyKVktA3rpDwv8vHjHoAiMGHhg==}
     dependencies:
@@ -2151,6 +2160,13 @@ packages:
 
   /hexo-front-matter/0.2.3:
     resolution: {integrity: sha512-GL/pGfYqsvjMgxjhOWv1zAc7t4JoGUow+CH9Tes/5N2wKxxTzt2woKEMHz1+c01CmhdVYUR4lO3R1ZAcxc0caA==}
+    dependencies:
+      js-yaml: 3.14.1
+    dev: false
+
+  /hexo-front-matter/1.0.0:
+    resolution: {integrity: sha512-Hn8IIzgWWnxYTekrjnA0rxwWMoQHifyrxKMqVibmFaRKf4AQ2V6Xo13Jiso6CDwYfS+OdA41QS5DG1Y+QXA5gw==}
+    engines: {node: '>=8.6.0'}
     dependencies:
       js-yaml: 3.14.1
     dev: false
@@ -4668,7 +4684,7 @@ packages:
     dev: false
 
   github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222:
-    resolution: {commit: 4de1d42ae3fff83a1aaae5d4f01ffc29444e4222, repo: git+ssh://git@github.com/theme-next/theme-next-calendar.git, type: git}
+    resolution: {tarball: https://codeload.github.com/theme-next/theme-next-calendar/tar.gz/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222}
     name: hexo-generator-calendar
     version: 0.0.1
     dependencies:
