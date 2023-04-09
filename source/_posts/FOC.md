@@ -110,6 +110,9 @@ $$\begin{equation} \label{eq1}
 e=mc^2
 \end{equation}$$
 
-$$\begin{equation} \label{eq1}
-e=sin60^2
-\end{equation}$$
+  
+COA2+C⟶2CO
+
+```
+$\ce{
+```
