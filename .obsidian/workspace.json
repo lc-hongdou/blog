@@ -11,22 +11,16 @@
             "id": "ff866e3f24118294",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "27a1d1958c1578f9",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/FOC整体框图.md"
+                "file": "scaffolds/post.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "stacked": true
       }
     ],
     "direction": "vertical"
@@ -55,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#32comment",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -92,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/FOC整体框图.md",
+                "file": "scaffolds/post.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/FOC整体框图.md",
+                "file": "scaffolds/post.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/FOC整体框图.md"
+                "file": "scaffolds/post.md"
               }
             }
           },
@@ -145,7 +139,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -162,8 +156,10 @@
       "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false
     }
   },
-  "active": "327624e3b2d79fdb",
+  "active": "ff866e3f24118294",
   "lastOpenFiles": [
+    "Excalidraw/FOC整体框图.md",
+    "_tmp_12296_4c679155e708f93c95ba9c8307bcc9d2",
     "package.json.1574951312",
     "pnpm-lock.yaml.3510600138",
     "_tmp_19184_9fbcfe28769f4ec070b8edfaf41f6013",
@@ -172,7 +168,6 @@
     "Excalidraw/系统流程图.md",
     "Excalidraw/系统流程图.svg",
     "Excalidraw/decision-flow-control.excalidrawlib",
-    "Excalidraw/FOC整体框图.md",
     "Excalidraw/data-viz.excalidrawlib",
     "Excalidraw/drwnio.excalidrawlib",
     "未命名.md",
@@ -184,8 +179,6 @@
     "pnpm-lock.yaml",
     "package.json",
     "_config.yml",
-    "_config.nexmoe.yml",
-    "themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.js",
     "themes/landscape/source/fancybox/helpers/fancybox_buttons.png",
     "themes/landscape/source/css/images/banner.jpg",
     "themes/landscape/source/css/fonts/fontawesome-webfont.svg",
