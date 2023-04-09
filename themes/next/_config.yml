@@ -597,7 +597,7 @@ comments:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: 深藏Blue
   count: true
   #post_meta_order: 0
