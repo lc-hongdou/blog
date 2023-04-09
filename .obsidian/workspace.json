@@ -150,6 +150,8 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "package.json.23483527",
+    "pnpm-lock.yaml.4081910841",
     "_tmp_13836_fb7f3f11eecdc714688b93541b6695ad",
     "_tmp_5568_2e4f7958c16c296be5f682217c42fb0f",
     "db.json",
@@ -169,8 +171,6 @@
     "public/images/cc-by-nc.svg",
     "public/images/cc-by-nc-nd.svg",
     "public/images/cc-by-nc-sa.svg",
-    "public/css/injector/light.css",
-    "public/index.html",
     "source/_posts/FOC.md",
     "Excalidraw/系统流程图.md",
     "scaffolds/draft.md",
