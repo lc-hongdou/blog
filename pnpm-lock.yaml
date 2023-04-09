@@ -23,6 +23,7 @@ specifiers:
   hexo-generator-index-pin-top: ^0.2.2
   hexo-generator-searchdb: ^1.4.1
   hexo-generator-tag: ^1.0.0
+  hexo-log: ^4.0.1
   hexo-related-popular-posts: ^5.0.1
   hexo-renderer-ejs: ^1.0.0
   hexo-renderer-pandoc: ^0.3.1
@@ -60,6 +61,7 @@ dependencies:
   hexo-generator-index-pin-top: 0.2.2
   hexo-generator-searchdb: 1.4.1_chokidar@3.5.3
   hexo-generator-tag: 1.0.0
+  hexo-log: 4.0.1
   hexo-related-popular-posts: 5.0.1
   hexo-renderer-ejs: 1.0.0
   hexo-renderer-pandoc: 0.3.1
@@ -2351,6 +2353,13 @@ packages:
   /hexo-log/3.2.0:
     resolution: {integrity: sha512-fk7jOW3hvKiAv4Q/d8UxaQlARwcv+5KjGcnxexUrqBqyWbMCLmw7jhMHTSRLNNQpaoTlF5ff+kQkPi4yhp9iag==}
     engines: {node: '>=12.4.0'}
+    dependencies:
+      picocolors: 1.0.0
+    dev: false
+
+  /hexo-log/4.0.1:
+    resolution: {integrity: sha512-jB2EADDJIwtepfUxiNCTN/5Ysa0B7vYMzkih69FAiubXcnMomKgx5WOlqODVfKnXYw0OQk1Fxrf5LVmfpR0i8w==}
+    engines: {node: '>=14'}
     dependencies:
       picocolors: 1.0.0
     dev: false
@@ -4860,7 +4869,7 @@ packages:
     dev: false
 
   github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222:
-    resolution: {commit: 4de1d42ae3fff83a1aaae5d4f01ffc29444e4222, repo: git+ssh://git@github.com/theme-next/theme-next-calendar.git, type: git}
+    resolution: {tarball: https://codeload.github.com/theme-next/theme-next-calendar/tar.gz/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222}
     name: hexo-generator-calendar
     version: 0.0.1
     dependencies:
