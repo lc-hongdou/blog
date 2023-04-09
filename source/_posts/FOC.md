@@ -110,9 +110,7 @@ $$\begin{equation} \label{eq1}
 e=mc^2
 \end{equation}$$
 
-$$\begin{equation} \label{eq1}
-CO2 + C -> 2 CO
-\end{equation}$$
+
 
 $\ce{CO2 + C -> 2 CO}$
 
