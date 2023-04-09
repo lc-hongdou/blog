@@ -15,7 +15,8 @@ menu:
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益 404
-  resources: 资源  #新增资源翻译中文
+  resources: 资源  #新增资源翻译中文 
+  guestbook: 留言板 # 新增留言板 
 sidebar:
   overview: 站点概览
   toc: 文章目录
