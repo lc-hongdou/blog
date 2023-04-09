@@ -6,7 +6,7 @@ tags:
     - 
 categories: ""  
 resources: "" 
-copyright: false # fals
+copyright: false 
 comments: true  # false/true 关闭文章底部Valine评论功能
 
 ---
