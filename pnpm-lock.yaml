@@ -33,7 +33,6 @@ specifiers:
   hexo-symbols-count-time: ^0.7.1
   hexo-util: ^3.0.1
   lodash: ^4.17.21
-  next-util: ^1.2.1
   nunjucks: ^3.2.3
   object-assign: ^4.1.1
   serve-static: ^1.15.0
@@ -71,7 +70,6 @@ dependencies:
   hexo-symbols-count-time: 0.7.1
   hexo-util: 3.0.1
   lodash: 4.17.21
-  next-util: 1.2.1
   nunjucks: 3.2.3_chokidar@3.5.3
   object-assign: 4.1.1
   serve-static: 1.15.0
@@ -4693,7 +4691,7 @@ packages:
     dev: false
 
   github.com/theme-next/hexo-next-utteranc/f592272a73cb47923f25443709786942f0398a69:
-    resolution: {commit: f592272a73cb47923f25443709786942f0398a69, repo: git+ssh://git@github.com/theme-next/hexo-next-utteranc.git, type: git}
+    resolution: {tarball: https://codeload.github.com/theme-next/hexo-next-utteranc/tar.gz/f592272a73cb47923f25443709786942f0398a69}
     name: hexo-next-utteranc
     version: 1.0.0
     dependencies:
@@ -4701,7 +4699,7 @@ packages:
     dev: false
 
   github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222:
-    resolution: {commit: 4de1d42ae3fff83a1aaae5d4f01ffc29444e4222, repo: git+ssh://git@github.com/theme-next/theme-next-calendar.git, type: git}
+    resolution: {tarball: https://codeload.github.com/theme-next/theme-next-calendar/tar.gz/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222}
     name: hexo-generator-calendar
     version: 0.0.1
     dependencies:

@@ -150,6 +150,7 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "_tmp_13452_64d075df22d864aef22d14428a5bb03c",
     "db.json",
     "public/css/injector/light.css",
     "public/lib/velocity/velocity.ui.min.js",
@@ -170,7 +171,6 @@
     "public/images/avatar.gif",
     "public/css/injector/dark.css",
     "public/index.html",
-    "public/lib/canvas-nest/README.html",
     "source/_posts/FOC.md",
     "Excalidraw/系统流程图.md",
     "scaffolds/draft.md",
