@@ -72,6 +72,16 @@
 
 {% endblock %}
 
+ <div class="tag-cloud">
+          <!--    <div class="tag-cloud-title">
+                {{ _p('counter.tag_cloud', site.tags.length) }}
+            </div>  -->
+             <div class="tag-cloud-tags" id="tags">
+			  {{ tagcloud({min_font: 16, max_font: 16, amount: 300, color: true, start_color: '#FFF', end_color: '#FFF'}) }}            
+		  </div>
+		</div>
++     {% include 'tag-color.swig' %}		
+
 {% block sidebar %}
   {{ sidebar_template.render(true) }}
 {% endblock %}
