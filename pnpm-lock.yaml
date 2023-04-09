@@ -21,7 +21,6 @@ specifiers:
   hexo-generator-calendar: github:theme-next/theme-next-calendar
   hexo-generator-category: ^1.0.0
   hexo-generator-feed: ^3.0.0
-  hexo-generator-index: ^3.0.0
   hexo-generator-index-pin-top: ^0.2.2
   hexo-generator-searchdb: ^1.4.1
   hexo-generator-tag: ^1.0.0
@@ -59,7 +58,6 @@ dependencies:
   hexo-generator-calendar: github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222
   hexo-generator-category: 1.0.0
   hexo-generator-feed: 3.0.0_chokidar@3.5.3
-  hexo-generator-index: 3.0.0
   hexo-generator-index-pin-top: 0.2.2
   hexo-generator-searchdb: 1.4.1_chokidar@3.5.3
   hexo-generator-tag: 1.0.0
@@ -2243,13 +2241,6 @@ packages:
       object-assign: 4.1.1
     dev: false
 
-  /hexo-generator-index/3.0.0:
-    resolution: {integrity: sha512-83AuNN4cWdLVi//3ugR8E3kR6rrOwhXZt+hOCm1IjtIGj353/GlrtpMHpqZHU5kqipzj4miy9dweVdukXglVWw==}
-    engines: {node: '>=14'}
-    dependencies:
-      hexo-pagination: 3.0.0
-    dev: false
-
   /hexo-generator-searchdb/1.4.1_chokidar@3.5.3:
     resolution: {integrity: sha512-7m8IBpZbI6iKb2jRYxs4pghD6Ln8ylQSRGl6MIC4G9wws21vYSXSD8rvC3MoCO+pWBHs6E/mTA/rjG+p2AZfVg==}
     dependencies:
@@ -2296,11 +2287,6 @@ packages:
   /hexo-pagination/1.0.0:
     resolution: {integrity: sha512-miEVFgxchPr2qNWxw0JWpJ9R/Yaf7HjHBZVjvCCcqfbsLyYtCvIfJDxcEwz1sDOC/fLzYPqNnhUI73uNxBHRSA==}
     engines: {node: '>=8.6.0'}
-    dev: false
-
-  /hexo-pagination/3.0.0:
-    resolution: {integrity: sha512-8oo1iozloZo7TojPVYg4IxL3SJKCBdSJ908fTlIxIK7TWJIKdYnQlW31+12DBJ0NhVZA/lZisPObGF08wT8fKw==}
-    engines: {node: '>=14'}
     dev: false
 
   /hexo-related-popular-posts/5.0.1:
