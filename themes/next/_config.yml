@@ -1046,7 +1046,7 @@ background_music: //music.163.com/outchain/player?type=2&id=1934213146&auto=1&he
 
 # Demo: https://utteranc.es/  http://trumandu.github.io/about/
 utteranc:
-  enable: false
+  enable: true
   repo: #Github repo such as :TrumanDu/comments
   pathname: pathname
   # theme: github-light,github-dark,github-dark-orange
