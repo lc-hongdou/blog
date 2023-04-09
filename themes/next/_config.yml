@@ -1051,3 +1051,6 @@ recent_posts_title: 近期文章
 recent_posts_layout: block
 recent_posts: true
 
+# 看板娘
+live2d:
+  enable: true
