@@ -111,7 +111,7 @@ e=mc^2
 \end{equation}$$
 
 $$\begin{equation} \label{eq1}
-e=sin60^2
+CO2 + C -> 2 CO
 \end{equation}$$
 
 $\ce{CO2 + C -> 2 CO}$
