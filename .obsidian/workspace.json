@@ -4,17 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "16d7c889a5c72ef4",
+        "id": "202fbd69c6dfd946",
         "type": "tabs",
         "children": [
           {
-            "id": "ff866e3f24118294",
+            "id": "5492a9a4993c0fed",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/系统流程图.md"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ],
@@ -84,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/系统流程图.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/系统流程图.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,9 +119,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Excalidraw/系统流程图.md"
-              }
+              "state": {}
             }
           },
           {
@@ -154,8 +148,9 @@
       "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false
     }
   },
-  "active": "ff866e3f24118294",
+  "active": "5492a9a4993c0fed",
   "lastOpenFiles": [
+    "Excalidraw/系统流程图.md",
     "Excalidraw/系统流程图.png",
     "source/_posts/FOC.md",
     "db.json",
@@ -175,14 +170,12 @@
     "public/images/cc-by-sa.svg",
     "public/images/cc-by-nd.svg",
     "public/images/cc-by-nc.svg",
-    "public/images/cc-by-nc-sa.svg",
     "public/css/injector/light.css",
     "public/index.html",
     "scaffolds/draft.md",
     "scaffolds/post.md",
     "Excalidraw/FOC整体框图.md",
     "Excalidraw/Clark变换.md",
-    "Excalidraw/系统流程图.md",
     "未命名.md",
     "source/_posts/hello-world.md",
     "scaffolds/page.md",

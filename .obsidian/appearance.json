@@ -1,6 +1,7 @@
 {
-  "cssTheme": "Obsidian Nord",
+  "cssTheme": "Prism",
   "baseFontSize": 16,
   "accentColor": "",
-  "interfaceFontFamily": "等线"
+  "interfaceFontFamily": "等线",
+  "theme": "obsidian"
 }
