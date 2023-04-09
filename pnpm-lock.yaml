@@ -36,6 +36,7 @@ specifiers:
   lodash: ^4.17.21
   nunjucks: ^3.2.3
   object-assign: ^4.1.1
+  picocolors: ^1.0.0
   serve-static: ^1.15.0
 
 dependencies:
@@ -74,6 +75,7 @@ dependencies:
   lodash: 4.17.21
   nunjucks: 3.2.3_chokidar@3.5.3
   object-assign: 4.1.1
+  picocolors: 1.0.0
   serve-static: 1.15.0
 
 packages:

@@ -150,6 +150,7 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "_tmp_18424_2df93fdf03ba8de28d3f37ce86edee0d",
     "package.json.178516315",
     "pnpm-lock.yaml.310372918",
     "_tmp_2680_ad7ba58987f1fc013f5d7b99a838578f",
@@ -160,7 +161,6 @@
     "db.json",
     "public/lib/font-awesome/webfonts/fa-solid-900.woff2",
     "public/lib/font-awesome/webfonts/fa-regular-400.woff2",
-    "public/lib/font-awesome/webfonts/fa-brands-400.woff2",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
     "public/images/favicon-16x16-next.png",
