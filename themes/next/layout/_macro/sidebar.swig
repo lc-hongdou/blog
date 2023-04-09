@@ -30,7 +30,19 @@
         {%- endif %}
       </div>
       <!--/noindex-->
-		{# recent posts #}
+	
+      <div class="site-overview-wrap sidebar-panel">
+        {{ partial('_partials/sidebar/site-overview.swig', {}, {cache: theme.cache.enable}) }}
+
+        {{- next_inject('sidebar') }}
+      </div>
+      
+      {% if theme.background_music %}
+       </div>
+		<iframe class="cc-license motion-element" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="{{ theme.background_music }}"></iframe>
+		</div>
+	  {% endif %}
+	  	{# recent posts #}
 {% if theme.recent_posts %}
   <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.recent_posts_layout  }}">
     <div class="links-of-blogroll-title">
@@ -48,18 +60,6 @@
     </ul>
   </div>
 {% endif %}
-      <div class="site-overview-wrap sidebar-panel">
-        {{ partial('_partials/sidebar/site-overview.swig', {}, {cache: theme.cache.enable}) }}
-
-        {{- next_inject('sidebar') }}
-      </div>
-      
-      {% if theme.background_music %}
-       </div>
-		<iframe class="cc-license motion-element" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="{{ theme.background_music }}"></iframe>
-		</div>
-	  {% endif %}
-	  
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
