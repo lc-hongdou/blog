@@ -109,3 +109,7 @@ $ hexo generate
 $$\begin{equation} \label{eq1}
 e=mc^2
 \end{equation}$$
+
+$$\begin{equation} \label{eq1}
+e=mc^2
+\end{equation}$$

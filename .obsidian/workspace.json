@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "scaffolds/post.md",
+                "file": "source/_posts/FOC.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "scaffolds/post.md",
+                "file": "source/_posts/FOC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "scaffolds/post.md",
+                "file": "source/_posts/FOC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "scaffolds/post.md"
+                "file": "source/_posts/FOC.md"
               }
             }
           },
@@ -158,6 +158,8 @@
   },
   "active": "ff866e3f24118294",
   "lastOpenFiles": [
+    "scaffolds/draft.md",
+    "scaffolds/post.md",
     "Excalidraw/FOC整体框图.md",
     "_tmp_12296_4c679155e708f93c95ba9c8307bcc9d2",
     "package.json.1574951312",
@@ -173,9 +175,7 @@
     "未命名.md",
     "source/_posts/FOC.md",
     "source/_posts/hello-world.md",
-    "scaffolds/post.md",
     "scaffolds/page.md",
-    "scaffolds/draft.md",
     "pnpm-lock.yaml",
     "package.json",
     "_config.yml",
