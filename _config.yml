@@ -63,11 +63,26 @@ prismjs:
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
+#博客首页分页设置
 index_generator:
-  path: ''
-  per_page: 10
-  order_by: -date
-
+  path: '' #博客的默认路径
+  per_page: 10 #主页中每页显示的贴子，0表示禁止分页
+  order_by: -date #博客排序，按时间倒序排列
+  
+#归档页的分页设置
+archive_generator: #归档页的配置
+  per_page: 5 #归档页每页博客数
+  yearly: true #按年归档
+  monthly: true # false/true 按月归档，为了加快生成速度，按月归档可不要
+  
+#标签页的分页设置
+tag_generator:
+  per_page: 5 #标签页每页博客数
+  #分类页的分页设置
+  
+category_generator:
+  per_page: 5  #值为0表示不分页，按需填写
+  
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -112,8 +127,8 @@ admin:
 
 # hexo-admin默认参数
 metadata:
-  language: C
-  comments: true
+#  language: C
+#  comments: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

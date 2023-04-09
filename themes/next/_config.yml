@@ -122,8 +122,9 @@ menu:
   archives: /archives/ || fa fa-archive
   about: /about/ || fa fa-user
   tags: /tags/ || fa fa-tags  
-  schedule: /schedule/ || fa fa-calendar
-  sitemap: /sitemap.xml || fa fa-sitemap
+  resources: /resources/|| fa fa-download #资源
+#  schedule: /schedule/ || fa fa-calendar
+#  sitemap: /sitemap.xml || fa fa-sitemap
 #  commonweal: /404/ || fa fa-heartbeat
 
 # Enable / Disable menu icons / item badges.
@@ -295,9 +296,10 @@ follow_me:
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
+# 显示最近博客 :一个hexo插件，它生成到相关帖子或热门帖子的链接列表
 related_posts:
-  enable: false
-  title: # Custom header, leave empty to use the default one
+  enable: true # false/true
+  title: # Custom header, leave empty to use the default one ,自定义页眉，保留为空以使用默认页眉
   display_in_home: false
   params:
     maxCount: 5

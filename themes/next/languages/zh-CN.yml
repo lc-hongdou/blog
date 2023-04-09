@@ -7,7 +7,7 @@ title:
   schedule: 日历
 menu:
   home: 首页
-  archives: 时间轴
+  archives: 索引
   categories: 分类
   tags: 标签
   about: 关于
@@ -15,6 +15,7 @@ menu:
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益 404
+  resources: 资源  #新增资源翻译中文
 sidebar:
   overview: 站点概览
   toc: 文章目录

@@ -1,8 +1,6 @@
 ---
 title: 分类
-date: 2023-04-08 08:55:16
-type: 'categories'
-
+comments: false
+type: categories
+date: 2023-04-09 16:28:18
 ---
-
-### FOC
