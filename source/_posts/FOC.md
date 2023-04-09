@@ -1,9 +1,14 @@
 ---
 title: FOC
 date: 2023-04-08 10:13:20
+top: 2
+tags: FOC
 mathjax: true
 
 ---
+
+<meta name="referrer" content="no-referrer"/>
+
 ## 绪论
 
 **▌什么是FOC控制？**
@@ -13,6 +18,8 @@ FOC（Field-Oriented Control），即磁场定向控制，也称矢量变频，�
 ![图片](https://i0.hdslb.com/bfs/article/db010619e98e39b5893894306e04e9c642c0353e.png@942w_393h_progressive.webp)
 
  图1.FOC机械臂应用[1]图2.FOC机械人应用[2]
+
+ <!-- more -->
 
 **▌FOC控制的核心思想**
 

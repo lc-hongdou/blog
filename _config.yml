@@ -43,7 +43,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true # false/true 是否启动资源文件夹
 relative_link: false
 future: true
 highlight:
@@ -122,11 +122,12 @@ deploy:
   repository:  https://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@github.com/lc-hongdou/blog.git
   branch: main
 
+# Search  添加搜索功能
 search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
+  path: ./public/search.xml #索引文件的路径，相对于站点根目录
+  field: post #搜索范围，默认是 post，还可以选择 page、all，设置成 all 表示搜索所有页面
+  format: html # 
+  limit: 10000 # 限制搜索的条目数
 
 symbols_count_time:
   symbols: true #是否统计字数
@@ -134,3 +135,15 @@ symbols_count_time:
   total_symbols: true #是否统计总字数
   total_time: false #是否统计总阅读时长
 
+#RSS订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+
+# 配置 RSS订阅 插件
+plugins: hexo-generate-feed
