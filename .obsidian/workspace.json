@@ -150,6 +150,7 @@
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "_tmp_18400_e513c296523f802603c4cc5b357921f5",
     "package.json.1793245731",
     "pnpm-lock.yaml.754774086",
     "_tmp_19012_1ed683f9dd9b00547858bca9d96d5c28",
@@ -160,7 +161,6 @@
     "_tmp_13836_fb7f3f11eecdc714688b93541b6695ad",
     "_tmp_5568_2e4f7958c16c296be5f682217c42fb0f",
     "db.json",
-    "public/lib/velocity/velocity.ui.min.js",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
     "public/images/favicon-16x16-next.png",
