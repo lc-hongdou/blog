@@ -17,6 +17,8 @@ $ hexo new "My New Post"
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 
+{% pdf /source/pdf/1.pdf %}
+
 ### Run server
 
 ``` bash

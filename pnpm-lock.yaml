@@ -15,6 +15,7 @@ specifiers:
   hexo-extend-injector2: ^0.3.1
   hexo-filter-emoji: ^2.2.2
   hexo-filter-mermaid-diagrams: ^1.0.5
+  hexo-filter-sequence: ^1.0.3
   hexo-fs: ^4.1.1
   hexo-generator-archive: ^1.0.0
   hexo-generator-calendar: github:theme-next/theme-next-calendar
@@ -50,6 +51,7 @@ dependencies:
   hexo-extend-injector2: 0.3.1
   hexo-filter-emoji: 2.2.2
   hexo-filter-mermaid-diagrams: 1.0.5
+  hexo-filter-sequence: 1.0.3
   hexo-fs: 4.1.1
   hexo-generator-archive: 1.0.0
   hexo-generator-calendar: github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222
@@ -2137,6 +2139,12 @@ packages:
 
   /hexo-filter-mermaid-diagrams/1.0.5:
     resolution: {integrity: sha512-/IkIMKn4V7PBAzMJGNDPSoBFlv1JGvIELXm5AWkR8N5N44kDTNJLtabb4h095UhZQIXOrF9zA1WYhi6wrWLW5Q==}
+    dependencies:
+      deep-assign: 2.0.0
+    dev: false
+
+  /hexo-filter-sequence/1.0.3:
+    resolution: {integrity: sha512-S3kXxzm+mHNUNejJCBeDEu8yFmp/oBDDvzUGLix6gKoCfetx6IOtScKZXeLVKxsURcxOkAYK5T16aS9/CWckyA==}
     dependencies:
       deep-assign: 2.0.0
     dev: false
