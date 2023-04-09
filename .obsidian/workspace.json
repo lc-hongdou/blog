@@ -145,11 +145,14 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false
+      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "6a883e1221ab9bed",
   "lastOpenFiles": [
+    "source/_posts/as.md",
+    "source/_posts/as",
     "db.json",
     "public/2023/04/08/FOC-Par/pasted-0.png",
     "public/2023/04/08/FO/pasted-0.png",
@@ -161,8 +164,6 @@
     "public/css/main.css",
     "public/css",
     "public/lib/velocity/velocity.ui.min.js",
-    "public/lib/velocity/velocity.min.js",
-    "public/lib/velocity",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
     "public/images/cc-zero.svg",
