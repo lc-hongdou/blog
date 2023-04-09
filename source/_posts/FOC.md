@@ -113,3 +113,6 @@ e=mc^2
 $$\begin{equation} \label{eq1}
 e=sin60^2
 \end{equation}$$
+
+$\ce{CO2 + C -> 2 CO}$
+
