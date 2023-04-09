@@ -6,7 +6,7 @@ tags:
     - 
 categories: ""  
 resources: "" 
-copyright: false 
+copyright: false # false/true 自动显示自定义的文章底部版权
 comments: true  # false/true 关闭文章底部Valine评论功能
 
 ---
