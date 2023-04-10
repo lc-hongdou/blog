@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Templater/New Note.md",
+                "file": "scaffolds/post.md",
                 "mode": "source",
                 "source": false
               }
@@ -172,9 +172,9 @@
   },
   "active": "e9f2de75d73eecc2",
   "lastOpenFiles": [
-    "Templater/New Note.md",
     "scaffolds/post.md",
     "Templater/note.md",
+    "Templater/New Note.md",
     "Templater",
     "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
     "source/_posts/as.md",
