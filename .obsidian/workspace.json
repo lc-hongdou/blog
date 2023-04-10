@@ -25,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Templater/未命名.md",
+                "file": "Templater/note.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -99,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Templater/未命名.md",
+                "file": "Templater/New Note.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Templater/未命名.md",
+                "file": "Templater/New Note.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Templater/未命名.md"
+                "file": "Templater/New Note.md"
               }
             }
           },
@@ -170,12 +169,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "327624e3b2d79fdb",
+  "active": "fdf632d58cb5f743",
   "lastOpenFiles": [
-    "Templater/New Note.md",
-    "Templater/未命名.md",
-    "Templater",
     "scaffolds/post.md",
+    "Templater/New Note.md",
+    "Templater/note.md",
+    "Templater",
     "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
     "source/_posts/as.md",
     "source/_posts/as",
