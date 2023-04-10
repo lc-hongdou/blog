@@ -18,6 +18,14 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "923d2be4cc0f798e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
         ],
         "stacked": true
@@ -159,8 +167,8 @@
   },
   "active": "fdf632d58cb5f743",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
     "Excalidraw/New Note.md",
+    "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
     "scaffolds/post.md",
     "source/_posts/as.md",
     "source/_posts/as",
