@@ -18,6 +18,14 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6f55cb187377e1da",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
         ],
         "stacked": true
@@ -157,7 +165,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "327624e3b2d79fdb",
+  "active": "fdf632d58cb5f743",
   "lastOpenFiles": [
     "Excalidraw/New Note.md",
     "scaffolds/post.md",

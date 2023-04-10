@@ -10,7 +10,7 @@ resources:
 copyright: true
 comments: true
 ---
-<meta name="referrer" content="no-referrer"/>
+< meta name="referrer" content="no-referrer"/ >
 
 <!--more-->
 
