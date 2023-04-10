@@ -6,4 +6,4 @@ updated: <% tp.file.last_modified_date() %>
 tags:
 ---
 ---
-title: New
+t
