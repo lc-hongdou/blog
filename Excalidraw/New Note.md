@@ -7,6 +7,7 @@ tags:
 top:   
 categories:
 resources:
+copyright:
 ---
 ---
 title: New Note
