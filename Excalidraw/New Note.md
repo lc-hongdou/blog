@@ -8,7 +8,7 @@ top:
 categories:
 resources:
 copyright:
-comments:
+comments: true
 ---
 ---
 title: New Note
