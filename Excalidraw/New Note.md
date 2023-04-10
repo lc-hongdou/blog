@@ -8,7 +8,4 @@ tags:
 ---
 title: New Note
 author: ningan123
-date: 2023-04-10 07:52
-updated: 2023-04-10 08:01
-tags:
----
+date: 2023
