@@ -5,8 +5,8 @@ date: <% tp.file.creation_date() %>
 updated: <% tp.file.last_modified_date() %>
 tags: <% tp.file.title %>
 top:   <% tp.file.title %>
-categories: <% tp.file.title %>
-resources:  <% tp.file.title %>
+categories: <% 
+resources:  
 copyright: true
 comments: true
 ---
