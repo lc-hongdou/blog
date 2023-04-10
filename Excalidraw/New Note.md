@@ -9,6 +9,4 @@ categories: <% tp.file.title %>
 resources: 
 copyright: true
 comments: true
-
-
 ---
