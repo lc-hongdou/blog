@@ -6,7 +6,7 @@ updated: <% tp.file.last_modified_date() %>
 tags: <% tp.file.title %>
 top:   <% tp.file.title %>
 categories: <% tp.file.title %>
-resources: 
+resources:  <% tp.file.title %>
 copyright: true
 comments: true
 ---
