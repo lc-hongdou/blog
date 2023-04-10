@@ -1,7 +1,14 @@
 ---
 title: <% tp.file.title %>
-author: ningan123
+author: 深藏blue
 date: <% tp.file.creation_date() %>
 updated: <% tp.file.last_modified_date() %>
 tags:
+top:   
+categories:
+resources:
+copyright: true
+comments: true
 ---
+<meta name="referrer" content="no-referrer"/>
+<!--more-->

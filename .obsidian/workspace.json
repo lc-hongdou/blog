@@ -32,6 +32,7 @@
             }
           }
         ],
+        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -98,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Templater/New Note.md",
+                "file": "Templater/note.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Templater/New Note.md",
+                "file": "Templater/note.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Templater/New Note.md"
+                "file": "Templater/note.md"
               }
             }
           },
@@ -169,10 +170,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fdf632d58cb5f743",
+  "active": "e9f2de75d73eecc2",
   "lastOpenFiles": [
-    "scaffolds/post.md",
     "Templater/New Note.md",
+    "scaffolds/post.md",
     "Templater/note.md",
     "Templater",
     "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
