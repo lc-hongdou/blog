@@ -16,9 +16,6 @@ comments: true
 ---
 title: New Note
 author: 深藏blue
-date: 2023-04-10 07:52
-updated: 2023-04-10 08:02
-tags:
----
+d
 
 
