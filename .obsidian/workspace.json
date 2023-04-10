@@ -13,21 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Excalidraw/New Note.md",
+                "file": "Templater/New Note.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "923d2be4cc0f798e",
+            "id": "e9f2de75d73eecc2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Templater/未命名.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
+        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -94,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/New Note.md",
+                "file": "Templater/未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/New Note.md",
+                "file": "Templater/未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/New Note.md"
+                "file": "Templater/未命名.md"
               }
             }
           },
@@ -165,10 +170,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "fdf632d58cb5f743",
+  "active": "327624e3b2d79fdb",
   "lastOpenFiles": [
+    "Templater/New Note.md",
+    "Templater/未命名.md",
+    "Templater",
     "scaffolds/post.md",
-    "Excalidraw/New Note.md",
     "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
     "source/_posts/as.md",
     "source/_posts/as",
@@ -182,7 +189,6 @@
     "public/2023",
     "public/css/main.css",
     "public/css",
-    "public/lib/velocity/velocity.ui.min.js",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
     "public/images/cc-zero.svg",
