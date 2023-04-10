@@ -10,6 +10,7 @@ resources:
 copyright: true
 comments: true
 ---
+<meta name="referrer" content="no-referrer"/>
 ---
 title: New Note
 author: 深藏blue
