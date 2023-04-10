@@ -7,7 +7,7 @@ tags:
 top:   
 categories:
 resources:
-copyright: true
+copyright: false
 comments: true
 ---
 ---
