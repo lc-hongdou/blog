@@ -14,8 +14,6 @@ comments: true
 <!--more-->
 
 ---
-title: New Note
-author: 深藏blue
-date: 2023-
+title: New 
 
 
