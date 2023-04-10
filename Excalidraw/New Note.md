@@ -11,11 +11,6 @@ copyright: true
 comments: true
 ---
 <meta name="referrer" content="no-referrer"/>
-<!--more-->
-
----
-title: New Note
-author: 深藏blue
-d
+<!
 
 
