@@ -4,8 +4,8 @@ author: 深藏blue
 date: <% tp.file.creation_date() %>
 updated: <% tp.file.last_modified_date() %>
 tags: <% tp.file.title %>
-top:   <% tp.file.title %>
-categories: <% 
+top:   <% tp.file.t
+categories: 
 resources:  
 copyright: true
 comments: true
