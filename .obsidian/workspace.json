@@ -154,11 +154,14 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "remotely-save:Remotely Save": false
     }
   },
-  "active": "327624e3b2d79fdb",
+  "active": "231ca563937e09e0",
   "lastOpenFiles": [
+    "admin_script.sh",
+    "新建文本文档.txt",
     "Templater/New Note.md",
     "Templater/note.md",
     "scaffolds/post.md",
@@ -175,7 +178,6 @@
     "public/2023/04",
     "public/2023",
     "public/css/main.css",
-    "public/css",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
     "public/images/cc-zero.svg",
