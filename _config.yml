@@ -184,13 +184,13 @@ live2d:
   model:
     #模板目录，在node_modules里
 #    use: live2d-widget-model-shizuku  
-#    use: live2d-widget-model-nico  
-    use: live2d-widget-model-tororo  
+    use: live2d-widget-model-nico  
+#    use: live2d-widget-model-tororo  
 
   display:
     position: right
-    width: 300 
-    height: 600
+    width: 150
+    height: 300
   mobile:
     # 在手机端显示
     show: false   
