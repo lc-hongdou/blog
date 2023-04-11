@@ -158,10 +158,11 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "231ca563937e09e0",
+  "active": "e9f2de75d73eecc2",
   "lastOpenFiles": [
-    "admin_script.sh",
+    "hexo-publish.bat",
     "新建文本文档.txt",
+    "admin_script.sh",
     "Templater/New Note.md",
     "Templater/note.md",
     "scaffolds/post.md",
@@ -177,7 +178,6 @@
     "public/2023/04/08",
     "public/2023/04",
     "public/2023",
-    "public/css/main.css",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
     "public/images/cc-zero.svg",
