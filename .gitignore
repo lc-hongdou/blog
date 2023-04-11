@@ -10,3 +10,5 @@ _back/
 
 github-deploy-key.pub
 github-deploy-key 
+
+.obsidian/plugins/remotely-save/
