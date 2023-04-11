@@ -130,8 +130,8 @@ admin:
   username: hongdou
   password_hash: $2a$10$0QHcEqeXTW2Bmco92eT0Z.N2btrr0JBIM9/JyjRW1RipAUM0mN1jK
   secret: zxcvbnm7410
-  deployCommand: ‘hexo-publish.bat'
-#  deployCommand: './admin_script.sh'
+#  deployCommand: ‘hexo-publish.bat'
+  deployCommand: './admin_script.sh'
 
 # hexo-admin默认参数
 metadata:
