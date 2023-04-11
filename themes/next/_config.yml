@@ -877,8 +877,8 @@ pace: #页面加载过程中右上角的进度条
 three:
   enable: true
   three_waves: false
-  canvas_lines: false
-  canvas_sphere: true # 球
+  canvas_lines: true
+  canvas_sphere: false # 球
 
 # Canvas-ribbon
 # Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
