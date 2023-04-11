@@ -226,7 +226,7 @@ toc:
 chat:  #聊天机器人
   enable: true
 #  service: chatra
-  service: tidio
+#  service: tidio
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
 
