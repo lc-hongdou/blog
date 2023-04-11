@@ -13,3 +13,9 @@ source/lib/*
 !source/lib/font-awesome/
 !source/lib/anime.min.js
 !source/lib/velocity/
+!source/lib/three/
+!source/lib/pjax/
+!source/lib/pdf/
+!source/lib/pace/
+!source/lib/canvas-ribbon/
+!source/lib/canvas-nest/
