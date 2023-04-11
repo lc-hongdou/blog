@@ -50,6 +50,7 @@
     "live2d-widget": "^3.1.4",
     "live2d-widget-model-nico": "^1.0.5",
     "live2d-widget-model-shizuku": "^1.0.5",
+    "live2d-widget-model-tororo": "^1.0.5",
     "lodash": "^4.17.21",
     "nunjucks": "^3.2.3",
     "object-assign": "^4.1.1",

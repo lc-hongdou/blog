@@ -38,6 +38,7 @@ specifiers:
   live2d-widget: ^3.1.4
   live2d-widget-model-nico: ^1.0.5
   live2d-widget-model-shizuku: ^1.0.5
+  live2d-widget-model-tororo: ^1.0.5
   lodash: ^4.17.21
   nunjucks: ^3.2.3
   object-assign: ^4.1.1
@@ -81,6 +82,7 @@ dependencies:
   live2d-widget: 3.1.4
   live2d-widget-model-nico: 1.0.5
   live2d-widget-model-shizuku: 1.0.5
+  live2d-widget-model-tororo: 1.0.5
   lodash: 4.17.21
   nunjucks: 3.2.3_chokidar@3.5.3
   object-assign: 4.1.1
@@ -3898,6 +3900,10 @@ packages:
 
   /live2d-widget-model-shizuku/1.0.5:
     resolution: {integrity: sha512-keEQR1Bm7HILLjNSIpmg1SGuo4H/ZsGRxnBn0l0BxgEbaHlmEE+Jb5nwhAtnh7PN/SRFE3+Ddk/ciy18sT7rAw==}
+    dev: false
+
+  /live2d-widget-model-tororo/1.0.5:
+    resolution: {integrity: sha512-qcDZnXyzmNM5NADDAWpknWMCqoip3CZ9bYrKKB0PqusnrUTK0e5k1jAl+RCos9Sbg9g1xzse50vmREwj1LiJ3w==}
     dev: false
 
   /live2d-widget/3.1.4:
