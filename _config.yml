@@ -183,7 +183,9 @@ live2d:
   pluginModelPath: assets/
   model:
     #模板目录，在node_modules里
-    use: live2d-widget-model-shizuku  
+#    use: live2d-widget-model-shizuku  
+    use: live2d-widget-model-nico  
+
   display:
     position: right
     width: 300 
