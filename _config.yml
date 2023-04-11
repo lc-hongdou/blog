@@ -143,7 +143,7 @@ metadata:
 deploy:
   type: 'git'
   repo: https://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@github.com/lc-hongdou/blog.git
-  branch: Next
+  branch: [Next]
 
 # Search  添加搜索功能
 search:
