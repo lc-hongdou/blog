@@ -141,7 +141,7 @@ metadata:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'github'
+  type: 'git'
   repository:  https://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@github.com/lc-hongdou/blog.git
   branch: main
 
