@@ -1,5 +1,5 @@
 # deploy_hexo.sh
-cd /d/hexoblog
+cd /H:\Obsidian_Blog
 pwd
 # 白底黑字效果
 echo -e "\033[47;30m>>>>>>>>>>>>>>>>>>>>hexo g<<<<<<<<<<<<<<<<<<<<\033[0m"
