@@ -51,7 +51,7 @@
     "live2d-widget-model-nico": "^1.0.5",
     "live2d-widget-model-shizuku": "^1.0.5",
     "lodash": "^4.17.21",
-    "nunjucks": "^3.2.3",
+    "nunjucks": "^3.2.4",
     "object-assign": "^4.1.1",
     "serve-static": "^1.15.0"
   }
