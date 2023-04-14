@@ -10,9 +10,7 @@ tags:
 
 ---
 
-  <%-
-    popular_posts_json({ maxCount: 5 , ulClass: 'popular-posts' , PPMixingRate: 0.0 , isImage: true} , post )
-  %>
+
 
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
@@ -27,7 +25,6 @@ $ hexo new "My New Post"
 
 
 
-{% dplayer “url=https://www.bilibili.com/video/BV1ck4y1i7Bd/?share_source=copy_web.mp4” “https://i0.hdslb.com/bfs/archive/08954fbadc03c7b119a2454137b6a6dfd74a1b80.jpg@518w_290h_!web-video-share-cover.webp.jpg” “api=https://api.prprpr.me/dplayer/” “id=” “loop=false” %}
 
 {% pdf “http://gisersqdai.top/mycv/201702.pdf” %}
 
