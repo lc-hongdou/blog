@@ -11,11 +11,9 @@
             "id": "e9f2de75d73eecc2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "scaffolds/post.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md"
               }
             }
           }
@@ -86,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "scaffolds/post.md",
+                "file": "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "scaffolds/post.md",
+                "file": "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "scaffolds/post.md"
+                "file": "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md"
               }
             }
           },
@@ -160,6 +158,9 @@
   },
   "active": "e9f2de75d73eecc2",
   "lastOpenFiles": [
+    "Excalidraw/Clark变换.md",
+    "Excalidraw/系统流程图.md",
+    "scaffolds/post.md",
     "copy_to_hexo.py",
     "copy_to_hexo.tpy",
     "copy_to_hexo.txt",
@@ -169,7 +170,6 @@
     "admin_script.sh",
     "Templater/New Note.md",
     "Templater/note.md",
-    "scaffolds/post.md",
     "Templater",
     "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
     "source/_posts/as.md",
@@ -177,7 +177,6 @@
     "db.json",
     "public/2023/04/08/FOC-Par/pasted-0.png",
     "public/2023/04/08/FO/pasted-0.png",
-    "public/2023/04/08/FOC-Par",
     "public/images/logo.svg",
     "public/images/favicon-32x32-next.png",
     "public/images/cc-zero.svg",
@@ -190,10 +189,8 @@
     "live2d-widget/README.md",
     "source/_posts/FOC笔记&坐标变换.md",
     "source/_posts/FOC.md",
-    "Excalidraw/系统流程图.md",
     "scaffolds/draft.md",
     "Excalidraw/FOC整体框图.md",
-    "Excalidraw/Clark变换.md",
     "source/_posts/hello-world.md",
     "scaffolds/page.md",
     "themes/landscape/README.md",
