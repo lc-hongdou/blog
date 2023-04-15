@@ -91,7 +91,7 @@ dependencies:
 packages:
 
   github.com/theme-next/theme-next-calendar/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222:
-    resolution: {commit: 4de1d42ae3fff83a1aaae5d4f01ffc29444e4222, repo: git+ssh://git@github.com/theme-next/theme-next-calendar.git, type: git}
+    resolution: {tarball: https://codeload.github.com/theme-next/theme-next-calendar/tar.gz/4de1d42ae3fff83a1aaae5d4f01ffc29444e4222}
     name: hexo-generator-calendar
     version: 0.0.1
     dependencies:
