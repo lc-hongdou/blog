@@ -13,7 +13,7 @@
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Excalidraw/Drawing 2023-04-15 16.05.21.excalidraw.md"
+                "file": "Excalidraw/Drawing 2023-04-15 16.05.10.excalidraw.md"
               }
             }
           }
@@ -84,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/Drawing 2023-04-15 16.05.21.excalidraw.md",
+                "file": "Excalidraw/Drawing 2023-04-15 16.05.10.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/Drawing 2023-04-15 16.05.21.excalidraw.md",
+                "file": "Excalidraw/Drawing 2023-04-15 16.05.10.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/Drawing 2023-04-15 16.05.21.excalidraw.md"
+                "file": "Excalidraw/Drawing 2023-04-15 16.05.10.excalidraw.md"
               }
             }
           },
@@ -158,26 +158,27 @@
   },
   "active": "dfaaf8b4176121f0",
   "lastOpenFiles": [
+    "public/js",
+    "public/pdf",
+    "public/lib",
+    "public/css",
+    "public/tags",
+    "public/2023",
+    "public/about",
+    "public/public",
+    "public/images",
+    "public/assets",
+    "public/uploads",
     "Excalidraw/Drawing 2023-04-15 16.05.21.excalidraw.png",
-    "Excalidraw/Drawing 2023-04-15 16.05.21.excalidraw.md",
+    "Excalidraw/主程序流程图.md",
     "Excalidraw/Drawing 2023-04-15 16.05.10.excalidraw.md",
     "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
     "Excalidraw/Clark变换.md",
     "Excalidraw/系统流程图.md",
     "scaffolds/post.md",
-    "copy_to_hexo.py",
-    "copy_to_hexo.tpy",
-    "copy_to_hexo.txt",
-    "新建文本文档.txt",
-    "up.sh",
-    "hexo-publish.bat",
-    "admin_script.sh",
     "Templater/New Note.md",
     "Templater/note.md",
-    "Templater",
     "source/_posts/as.md",
-    "source/_posts/as",
-    "db.json",
     "public/2023/04/08/FOC-Par/pasted-0.png",
     "public/2023/04/08/FO/pasted-0.png",
     "public/images/logo.svg",
@@ -187,7 +188,6 @@
     "public/images/cc-by.svg",
     "public/images/cc-by-sa.svg",
     "public/images/cc-by-nc.svg",
-    "public/images/cc-by-nd.svg",
     "source/live2d-widget/README.md",
     "live2d-widget/README.md",
     "source/_posts/FOC笔记&坐标变换.md",
