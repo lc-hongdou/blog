@@ -32,8 +32,10 @@ CS -----------> 接PA4
 //----------------------------------------------------------------
 ```
 ## U8g2简介（出自此篇[基于STM32移植U8g2图形库——OLED显示](https://blog.csdn.net/black_sneak/article/details/126312657?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168163849116800211564885%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168163849116800211564885&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126312657-null-null.142%5Ev83%5Epc_search_v2,239%5Ev2%5Einsert_chatgpt&utm_term=U8g2&spm=1018.2226.3001.4187)）
+
 ### U8g2是什么
 &emsp;&emsp; U8g2是GitHub上一款十分优秀的开源图形库（GUI库），其本质是嵌入式设备的单色图形库。在 Github 上超过3.2K Star，2.6K Commit。其开发语言90%为C语言，且代码简洁干练便于移植与后期修改。
+
 ### U8g2支持的显示控制器
  &emsp;&emsp; U8g2支持单色OLED和LCD，包括以下控制器：
  
@@ -50,6 +52,7 @@ CS -----------> 接PA4
 | SED1520 | SBN1661 | IL3820 | MAX7219 |  |  |
 
 &emsp;&emsp; 可以说，基本上主流的显示控制器都支持，比如我们常见的SSD1306等，读者在使用该库之前请查阅自己的OLED显示控制器是否处于支持列表中。
+
 ### U8g2的优势
  - U8g2库平台支持性好，基本上支持绝大部分Arduino与STM32开发板，也包含物联网比较常用的esp8266；
  - U8g2库显示控制器支持性好，基本上市面上的OLED都完美支持；
@@ -57,38 +60,51 @@ CS -----------> 接PA4
  - U8g2 库移植简单，容易使用（这一点也是笔者比较钟意的）；
 
  &emsp;&emsp;其实，我们可以把U8g2当作一个工具箱，需要使用的时候就去打开工具箱，使用里面的已经写好的API函数去实现我们需要达到的显示效果。（当然，前提是需要熟悉U8g2的使用，这一点网上有很多用法博客写得都很详细，感兴趣的读者朋友可以去看看这篇：[深入学习Arduino u8g2 OLED库，一篇就够](https://blog.csdn.net/dpjcn1990/article/details/92831760?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168165487716800180669581%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=168165487716800180669581&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~hot_rank-1-92831760-null-null.142%5Ev83%5Epc_search_v2,239%5Ev2%5Einsert_chatgpt&utm_term=u8g2&spm=1018.2226.3001.4187)）
+ 
 ## CubexMX的配置
+
 ### RCC配置外部高速晶振（精度更高）——HSE：
+
 ![RCC配置外部高速晶振（精度更高）——HSE](https://img-blog.csdnimg.cn/898c214b2d4f41be86ed19f72879c570.png)
+
 ### SYS配置：Debug设置成Serial Wire（否则可能导致芯片自锁）：
+
 ![Debug设置成Serial Wire](https://img-blog.csdnimg.cn/a163ea11d7d64a3aa2d7bff932b64c7e.png)
 
 ### 时钟树配置：
 
 ![时钟树配置](https://img-blog.csdnimg.cn/db970f2364b64b8cbc3b76fe2bccf04f.png)
+
 ### SPI1配置半双工（全双工）：作为OLED的通讯方式：
 **&emsp;&emsp;半双工：**
 ![SPI1配置半双工](https://img-blog.csdnimg.cn/95f16dd2bcb346a8b24a115c55ce0dd7.png)
 **&emsp;&emsp;全双工：**
 ![SPI1配置全双工](https://img-blog.csdnimg.cn/7da21c305c2949de8399c17ae0540e1b.png)
+
 ### DMA配置：
 ![DMA配置](https://img-blog.csdnimg.cn/65c0c9fd905d4d86989d3e4f3eac5d65.png)
+
 ### 工程配置：
 ![工程命名](https://img-blog.csdnimg.cn/abde58d25e62430092db882a905a3ee8.png)
 &emsp;&emsp;**这里我们不用的库不加，减小代码体积**
 ![工程配置](https://img-blog.csdnimg.cn/1867710e32f34461a8250322ca52dc9f.png)
 **然后生成**
+
 ## U8g2移植
+
 ### 准备U8g2库文件
  - `准备U8g2库文件---------->U8g2下载地址: https://github.com/olikraus/u8g2    下载压缩包`
  - `Git用---------->git clone https://ghproxy.com/https://github.com/olikraus/u8g2.git`
+ 
 ### 精简U8g2库文件
  -  U8g2支持多种显示驱动的屏幕，因为源码中也包含了各个驱动对应的文件（因此不需要自己去写屏幕底层驱动了），为了减小整个工程的代码体积和芯片资源占用，在移植U8g2时，可以删除一些无用的文件。
  - 这里我们主要关注的是U8g2库文件中的**csrc文件夹** ![csrc文件夹](https://img-blog.csdnimg.cn/f2f679bd6ab448228be9c75adecaacad.png)
+ 
 #### 去掉csrc文件夹中无用的驱动文件
 &emsp;&emsp;这些驱动文件通常是**u8x8_d_xxx.c**，**xxx**包括**驱动的型号**和**屏幕分辨率**。**ssd1306**驱动芯片的OLED，使用**u8x8_ssd1306_128x64_noname.c**这个文件，其它的屏幕驱动和分辨率的文件可以删掉。
 ![去掉csrc文件夹中无用的驱动文件](https://img-blog.csdnimg.cn/c71c9005d94a4a78b8ad7aa884173549.png)
 **u8x8_d_xxx.c**文件中留下**u8x8_ssd1306_128x64_noname.c**即可
+
 #### 精简u8g2_d_setup.c（注意不是u8x8_setup.c）
 &emsp;&emsp;由于本文使用的OLED是**SPI**接口，只留一个本次要用到**u8g2_Setup_ssd1306_128x64_noname_f**就好（如果是**IIC**接口，需要使用**u8g2_Setup_ssd1306_i2c_128x64_noname_f**这个函数，**多了i2c**注意区分），其它的可以删掉或注释掉。
 ![精简u8g2_d_setup.c](https://img-blog.csdnimg.cn/4f1653309e1f41108c3733a396ad282b.png)
@@ -110,11 +126,14 @@ CS -----------> 接PA4
 &emsp;&emsp;**u8g2_d_memory.c**文件中，由于用到的**u8g2_Setup_ssd1306_128x64_noname_f**函数中，只调用了**u8g2_m_16_8_f**这个函数，所以只用留下这个函数，如果你用的其他函数，在**u8g2_d_memory.c**留下它相对应调用到的函数即可，**其它的函数要删掉或注释**，否则编译时很可能会导致**内存不足**。
 ![其它的函数要删掉或注释](https://img-blog.csdnimg.cn/62fefd3f5d65419bb777a50ca9d52213.png)
 ![精简u8g2_d_memory.c](https://img-blog.csdnimg.cn/2cc6547d7ea349a7b6ccd5082895b3a6.png)
+
 ### 将精简后的U8g2库添加至Keil
  &emsp;&emsp;Keil工程目录添加**精简后U8g2库文件中的csrc**文件夹，然后再添加U8g2的头文件搜寻目录（U8g2_lib里都是csrc文件里面的文件，可以根据自己的需要删减），如下：
 ![将精简后的U8g2库添加至Keil](https://img-blog.csdnimg.cn/ed4690cfa2674fb0aba706b7e96e9158.png)
 ![精简后U8g2库](https://img-blog.csdnimg.cn/9a6127b26e8941e5811c2c553b0be35e.png)
+
 ## 代码
+
 ### Oled回调函数
 **oled_driver.c：**
 ```c
@@ -243,6 +262,7 @@ void draw(u8g2_t *u8g2);
 #endif  
 ```
 &emsp;&emsp;上述编写的移植函数代码属于HAL库下的代码，标准库的代码其实差不多，有个别地方需要注意修改。有一定MCU编程基础的朋友应该很简单就可以做到仿写。移植代码的本质：这些函数代码就是对应的U8g2图形库的接口函数，通过这些函数去启用U8g2图形库。
+
 ### main函数
 
 ```c
@@ -307,12 +327,3 @@ int main(void)
 原文链接：[https://blog.csdn.net/black_sneak/article/details/126312657](https://blog.csdn.net/black_sneak/article/details/126312657)
 
  - 开源代码：[https://gitee.com/ljs_ice/STM32_u8g2](https://gitee.com/ljs_ice/STM32_u8g2)
-
-
-
-
-
-
-
-
-
