@@ -10,6 +10,8 @@ categories:
 abbrlink: 1345941684
 date: 2023-04-17 23:08:00
 ---
+<meta name="referrer" content="no-referrer"/>
+
 # U8g2库的STM32硬件SPI移植教程（HAL、OLED显示、四线SPI）
 ## 前言
 
