@@ -876,8 +876,8 @@ pace: #页面加载过程中右上角的进度条
 # Dependencies: https://github.com/theme-next/theme-next-three
 three:
   enable: true
-  three_waves: false
-  canvas_lines: true
+  three_waves: true
+  canvas_lines: false
   canvas_sphere: false # 球
 
 # Canvas-ribbon
@@ -1014,8 +1014,8 @@ vendors:
   # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
   # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
   three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
-  three_waves: 
-  canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
+  three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
+  canvas_lines: 
   canvas_sphere: 
 
   # Internal version: 1.0.0

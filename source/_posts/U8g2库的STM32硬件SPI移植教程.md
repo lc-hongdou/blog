@@ -325,7 +325,9 @@ int main(void)
 
 ## 总结 
  &emsp;&emsp;U8g2图形库可以说目前小尺寸OLED首选的GUI，其可以呈现出的图形远不止上述中的图形，更多的功能还需要读者朋友们自己去好好发掘。优秀GUI的移植是一名合格嵌入式工程师必须掌握的技能之一，其可以达到大大缩短开发周期，优化UI界面等目的。LCD屏幕也存在类似的优秀开源GUI库，后续笔者会进行更新，感兴趣的读者朋友可以点波关注，感谢！！！
+ 
 ————————————————
+
 原文链接：[https://blog.csdn.net/black_sneak/article/details/126312657](https://blog.csdn.net/black_sneak/article/details/126312657)
 
  - 开源代码：[https://gitee.com/ljs_ice/STM32_u8g2](https://gitee.com/ljs_ice/STM32_u8g2)
