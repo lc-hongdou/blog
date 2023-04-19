@@ -1,12 +1,13 @@
 ---
-title: FOC
-top: 2
-tags: FOC
+title: FOC索引
+top: 1
+tags: 
+  - FOC
+  - 学习总结
 mathjax: true
 abbrlink: 325217155
 date: 2023-04-08 10:13:20
 ---
-
   
 <meta name="referrer" content="no-referrer"/>
 

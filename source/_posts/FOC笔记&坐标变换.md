@@ -4,11 +4,12 @@ author: 深藏Blue
 tags:
   - FOC
   - 笔记
-categories: []
-language: cn
+categories:
+  - 笔记
 abbrlink: 95292746
 date: 2023-04-08 01:33:00
 ---
+<meta name="referrer" content="no-referrer"/>
 
 # 坐标变换
 什么是坐标变换？
