@@ -77,7 +77,7 @@ CS -----------> 接PA4
 
 ![时钟树配置](https://img-blog.csdnimg.cn/db970f2364b64b8cbc3b76fe2bccf04f.png)
 
-### SPI1配置半双工（全双工）：作为OLED的通讯方式：
+### SPI1配置半双工（全双工）：作为OLED的通讯方式：（注意配置）
 **&emsp;&emsp;半双工：**
 ![SPI1配置半双工](https://img-blog.csdnimg.cn/95f16dd2bcb346a8b24a115c55ce0dd7.png)
 **&emsp;&emsp;全双工：**
@@ -239,7 +239,7 @@ void draw(u8g2_t *u8g2)
 }
 /********************************* end_of_file **********************************/
 ```
-GPIO定义的时候在CubeMX**设置别名**能更容易的切换IO口，如下
+GPIO定义的时候在CubeMX**设置别名**能更容易的切换IO口，CS拉高，如下
 ![GPIO设置别名](https://img-blog.csdnimg.cn/c0cdcfeb0f984979ab7f43925b65f3e8.png)
 **oled_driver.h：**
 ```c
@@ -268,6 +268,7 @@ void draw(u8g2_t *u8g2);
 ### main函数
 
 ```c
+//记得引用#include "u8g2.h"
 int main(void)
 {
   /* USER CODE BEGIN 1 */
