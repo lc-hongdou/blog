@@ -1,4 +1,4 @@
-layout: 玩转u8g2
+---
 author: 深藏Blue
 title: 玩转 U8g2 OLED库，一篇就够——基于SMT32、HAL
 tags:
@@ -8,6 +8,7 @@ tags:
 categories:
   - U8g2
   - STM32
+abbrlink: 290313423
 date: 2023-04-23 07:51:00
 ---
 <meta name="referrer" content="no-referrer"/>
