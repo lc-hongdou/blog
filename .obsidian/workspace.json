@@ -11,9 +11,9 @@
             "id": "dfaaf8b4176121f0",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "image",
               "state": {
-                "file": "Excalidraw/系统流程图.md"
+                "file": "Excalidraw/系统流程图.png"
               }
             }
           }
@@ -84,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/系统流程图.md",
+                "file": "Excalidraw/系统流程图.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/系统流程图.md",
+                "file": "Excalidraw/系统流程图.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/系统流程图.md"
+                "file": "Excalidraw/系统流程图.png"
               }
             }
           },
@@ -158,6 +158,8 @@
   },
   "active": "dfaaf8b4176121f0",
   "lastOpenFiles": [
+    "Excalidraw/主程序流程图.md",
+    "Excalidraw/系统流程图.md",
     "Excalidraw/程序流程图.png",
     "未命名",
     "Excalidraw/程序流程图.md",
@@ -171,10 +173,8 @@
     "public/lib/three",
     "public/assets/js",
     "Excalidraw/Drawing 2023-04-15 16.05.21.excalidraw.png",
-    "Excalidraw/主程序流程图.md",
     "Excalidraw/Drawing 2023-04-10 08.08.02.excalidraw.md",
     "Excalidraw/Clark变换.md",
-    "Excalidraw/系统流程图.md",
     "scaffolds/post.md",
     "Templater/New Note.md",
     "Templater/note.md",
