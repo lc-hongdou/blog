@@ -3,7 +3,7 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - 下一页  # 当推送到 Next 分支时触发
+      - Next  # 当推送到 Next 分支时触发
 
 jobs:
   build:
