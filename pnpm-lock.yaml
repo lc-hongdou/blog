@@ -92,9 +92,6 @@ dependencies:
   hexo-renderer-ejs:
     specifier: ^1.0.0
     version: registry.npmmirror.com/hexo-renderer-ejs@1.0.0
-  hexo-renderer-pandoc:
-    specifier: ^0.4.0
-    version: 0.4.0
   hexo-renderer-stylus:
     specifier: ^2.1.0
     version: registry.npmmirror.com/hexo-renderer-stylus@2.1.0
@@ -179,10 +176,6 @@ packages:
 
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==, tarball: https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.11.tgz}
-    dev: false
-
-  /hexo-renderer-pandoc@0.4.0:
-    resolution: {integrity: sha512-e913A2EZbhwbIfg+QvYUalEPHtK5qs9Rqj3ZrsQ3cYTbbiETMWhUQ7bzSlgUeh639eL0UDuBmv2vrEqj5RBchg==, tarball: https://registry.npmmirror.com/hexo-renderer-pandoc/-/hexo-renderer-pandoc-0.4.0.tgz}
     dev: false
 
   /image-size@0.5.5:
