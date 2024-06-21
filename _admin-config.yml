@@ -1,8 +1,0 @@
-options:
-  lineNumbers: true
-  spellcheck: false
-  nineyaImageFilePath: true
-editor:
-  lineNumbers: true
-  inputStyle: contenteditable
-  spellcheck: false
