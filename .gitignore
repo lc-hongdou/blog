@@ -1,14 +1,8 @@
 .DS_Store
 Thumbs.db
 db.json
-
 *.log
 node_modules/
 public/
 .deploy*/
-_back/
-
-github-deploy-key.pub
-github-deploy-key 
-
-.obsidian/plugins/remotely-save/
+_multiconfig.yml
