@@ -44,6 +44,9 @@ importers:
       hexo-util:
         specifier: ^3.3.0
         version: 3.3.0
+      nunjucks:
+        specifier: ^3.2.4
+        version: 3.2.4(chokidar@3.6.0)
 
 packages:
 
