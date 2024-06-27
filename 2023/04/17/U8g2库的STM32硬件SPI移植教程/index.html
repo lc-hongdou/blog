@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="U8g2库的STM32硬件SPI移植教程（HAL、OLED显示、四线SPI）前言 本文教你把U8g2图形库移植到STM32上，基于STM32的硬件SPI、CubeMX U8g2库Github网址：https:&#x2F;&#x2F;github.com&#x2F;olikraus&#x2F;u8g2 U8g2库CSDN镜像网址：https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;olikraus&#x2F;u8g2?utm_source&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="U8g2库的STM32硬件SPI移植教程">
+<meta property="og:url" content="http://example.com/2023/04/17/U8g2%E5%BA%93%E7%9A%84STM32%E7%A1%AC%E4%BB%B6SPI%E7%A7%BB%E6%A4%8D%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="U8g2库的STM32硬件SPI移植教程（HAL、OLED显示、四线SPI）前言 本文教你把U8g2图形库移植到STM32上，基于STM32的硬件SPI、CubeMX U8g2库Github网址：https:&#x2F;&#x2F;github.com&#x2F;olikraus&#x2F;u8g2 U8g2库CSDN镜像网址：https:&#x2F;&#x2F;gitcode.net&#x2F;mirrors&#x2F;olikraus&#x2F;u8g2?utm_source&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/898c214b2d4f41be86ed19f72879c570.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a163ea11d7d64a3aa2d7bff932b64c7e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/db970f2364b64b8cbc3b76fe2bccf04f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/95f16dd2bcb346a8b24a115c55ce0dd7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7da21c305c2949de8399c17ae0540e1b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/65c0c9fd905d4d86989d3e4f3eac5d65.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/abde58d25e62430092db882a905a3ee8.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1867710e32f34461a8250322ca52dc9f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f2f679bd6ab448228be9c75adecaacad.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c71c9005d94a4a78b8ad7aa884173549.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4f1653309e1f41108c3733a396ad282b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/62fefd3f5d65419bb777a50ca9d52213.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2cc6547d7ea349a7b6ccd5082895b3a6.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ed4690cfa2674fb0aba706b7e96e9158.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9a6127b26e8941e5811c2c553b0be35e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c0cdcfeb0f984979ab7f43925b65f3e8.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d2087b1b1d3f4c98ae7477361ed54430.jpeg">
+<meta property="article:published_time" content="2023-04-17T23:08:00.000Z">
+<meta property="article:modified_time" content="2024-06-27T06:37:56.213Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="U8g2">
+<meta property="article:tag" content="STM32">
+<meta property="article:tag" content="CubeMX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/898c214b2d4f41be86ed19f72879c570.png">
+
+<link rel="canonical" href="http://example.com/2023/04/17/U8g2%E5%BA%93%E7%9A%84STM32%E7%A1%AC%E4%BB%B6SPI%E7%A7%BB%E6%A4%8D%E6%95%99%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>U8g2库的STM32硬件SPI移植教程 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/17/U8g2%E5%BA%93%E7%9A%84STM32%E7%A1%AC%E4%BB%B6SPI%E7%A7%BB%E6%A4%8D%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          U8g2库的STM32硬件SPI移植教程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-04-17 23:08:00" itemprop="dateCreated datePublished" datetime="2023-04-17T23:08:00+00:00">2023-04-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-06-27 06:37:56" itemprop="dateModified" datetime="2024-06-27T06:37:56+00:00">2024-06-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer"/>
+
+<h1 id="U8g2库的STM32硬件SPI移植教程（HAL、OLED显示、四线SPI）"><a href="#U8g2库的STM32硬件SPI移植教程（HAL、OLED显示、四线SPI）" class="headerlink" title="U8g2库的STM32硬件SPI移植教程（HAL、OLED显示、四线SPI）"></a>U8g2库的STM32硬件SPI移植教程（HAL、OLED显示、四线SPI）</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>本文教你把U8g2图形库移植到STM32上，基于STM32的硬件SPI、CubeMX</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/olikraus/u8g2">U8g2库Github网址：https://github.com/olikraus/u8g2</a></li>
+<li><a target="_blank" rel="noopener" href="https://gitcode.net/mirrors/olikraus/u8g2?utm_source=csdn_github_accelerator">U8g2库CSDN镜像网址：https://gitcode.net/mirrors/olikraus/u8g2?utm_source&#x3D;csdn_github_accelerator</a></li>
+<li>硬件准备：STM32C8T6（STM32系列芯片）、0.96寸OLED（128×64）、J-Link（或其他）</li>
+<li>引脚连接：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//----------------------------------------------------------------</span></span><br><span class="line">本次用的是SPI1、DMA、全双工(当然半双工也没什么问题、CS、DC、RS是普通GPIO，自行切换)</span><br><span class="line">GND -----------&gt; 电源地</span><br><span class="line">VCC -----------&gt; 接<span class="number">5</span>V或<span class="number">3.3</span>v电源</span><br><span class="line">D0 -----------&gt; 接PA5（SCL）</span><br><span class="line">D1 -----------&gt; 接PA7（SDA）</span><br><span class="line">RES -----------&gt; 接PB0</span><br><span class="line">DC -----------&gt; 接PB1</span><br><span class="line">CS -----------&gt; 接PA4              </span><br><span class="line"><span class="comment">//----------------------------------------------------------------</span></span><br></pre></td></tr></table></figure>
+<h2 id="U8g2简介（出自此篇基于STM32移植U8g2图形库——OLED显示）"><a href="#U8g2简介（出自此篇基于STM32移植U8g2图形库——OLED显示）" class="headerlink" title="U8g2简介（出自此篇基于STM32移植U8g2图形库——OLED显示）"></a>U8g2简介（出自此篇<a target="_blank" rel="noopener" href="https://blog.csdn.net/black_sneak/article/details/126312657?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168163849116800211564885%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168163849116800211564885&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126312657-null-null.142%5Ev83%5Epc_search_v2,239%5Ev2%5Einsert_chatgpt&utm_term=U8g2&spm=1018.2226.3001.4187">基于STM32移植U8g2图形库——OLED显示</a>）</h2><h3 id="U8g2是什么"><a href="#U8g2是什么" class="headerlink" title="U8g2是什么"></a>U8g2是什么</h3><p>&emsp;&emsp; U8g2是GitHub上一款十分优秀的开源图形库（GUI库），其本质是嵌入式设备的单色图形库。在 Github 上超过3.2K Star，2.6K Commit。其开发语言90%为C语言，且代码简洁干练便于移植与后期修改。</p>
+<h3 id="U8g2支持的显示控制器"><a href="#U8g2支持的显示控制器" class="headerlink" title="U8g2支持的显示控制器"></a>U8g2支持的显示控制器</h3><p> &emsp;&emsp; U8g2支持单色OLED和LCD，包括以下控制器：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SSD1305</td>
+<td><strong>SSD1306</strong></td>
+<td>SSD1309</td>
+<td>SSD1312</td>
+<td>SSD1316</td>
+<td>SSD1320</td>
+</tr>
+<tr>
+<td>SSD1322</td>
+<td>SSD1325</td>
+<td>SSD1327</td>
+<td>SSD1329</td>
+<td>SSD1606</td>
+<td>SSD1607</td>
+</tr>
+<tr>
+<td>SH1106</td>
+<td>SH1107</td>
+<td>SH1108</td>
+<td>SH1122</td>
+<td>T6963</td>
+<td>RA8835</td>
+</tr>
+<tr>
+<td>LC7981</td>
+<td>PCD8544</td>
+<td>PCF8812</td>
+<td>HX1230</td>
+<td>UC1601</td>
+<td>UC1604</td>
+</tr>
+<tr>
+<td>UC1608</td>
+<td>UC1610</td>
+<td>UC1611</td>
+<td>UC1617</td>
+<td>UC1638</td>
+<td>UC1701</td>
+</tr>
+<tr>
+<td>ST7511</td>
+<td>ST7528</td>
+<td>ST7565</td>
+<td>ST7567</td>
+<td>ST7571</td>
+<td>ST7586</td>
+</tr>
+<tr>
+<td>ST7588</td>
+<td>ST75256</td>
+<td>ST75320</td>
+<td>NT7534</td>
+<td>ST7920</td>
+<td>IST3020</td>
+</tr>
+<tr>
+<td>IST7920</td>
+<td>LD7032</td>
+<td>KS0108</td>
+<td>KS0713</td>
+<td>HD44102</td>
+<td>T7932</td>
+</tr>
+<tr>
+<td>SED1520</td>
+<td>SBN1661</td>
+<td>IL3820</td>
+<td>MAX7219</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>&emsp;&emsp; 可以说，基本上主流的显示控制器都支持，比如我们常见的SSD1306等，读者在使用该库之前请查阅自己的OLED显示控制器是否处于支持列表中。</p>
+<h3 id="U8g2的优势"><a href="#U8g2的优势" class="headerlink" title="U8g2的优势"></a>U8g2的优势</h3><ul>
+<li>U8g2库平台支持性好，基本上支持绝大部分Arduino与STM32开发板，也包含物联网比较常用的esp8266；</li>
+<li>U8g2库显示控制器支持性好，基本上市面上的OLED都完美支持；</li>
+<li>U8g2库 API函数众多，特别支持了中文，支持了不同字体，这是一个对于开发者俩说不小的福利；</li>
+<li>U8g2 库移植简单，容易使用（这一点也是笔者比较钟意的）；</li>
+</ul>
+<p> &emsp;&emsp;其实，我们可以把U8g2当作一个工具箱，需要使用的时候就去打开工具箱，使用里面的已经写好的API函数去实现我们需要达到的显示效果。（当然，前提是需要熟悉U8g2的使用，这一点网上有很多用法博客写得都很详细，感兴趣的读者朋友可以去看看这篇：<a target="_blank" rel="noopener" href="https://blog.csdn.net/dpjcn1990/article/details/92831760?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168165487716800180669581%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=168165487716800180669581&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~hot_rank-1-92831760-null-null.142%5Ev83%5Epc_search_v2,239%5Ev2%5Einsert_chatgpt&utm_term=u8g2&spm=1018.2226.3001.4187">深入学习Arduino u8g2 OLED库，一篇就够</a>）</p>
+<h2 id="CubexMX的配置"><a href="#CubexMX的配置" class="headerlink" title="CubexMX的配置"></a>CubexMX的配置</h2><h3 id="RCC配置外部高速晶振（精度更高）——HSE："><a href="#RCC配置外部高速晶振（精度更高）——HSE：" class="headerlink" title="RCC配置外部高速晶振（精度更高）——HSE："></a>RCC配置外部高速晶振（精度更高）——HSE：</h3><p><img src="https://img-blog.csdnimg.cn/898c214b2d4f41be86ed19f72879c570.png" alt="RCC配置外部高速晶振（精度更高）——HSE"></p>
+<h3 id="SYS配置：Debug设置成Serial-Wire（否则可能导致芯片自锁）："><a href="#SYS配置：Debug设置成Serial-Wire（否则可能导致芯片自锁）：" class="headerlink" title="SYS配置：Debug设置成Serial Wire（否则可能导致芯片自锁）："></a>SYS配置：Debug设置成Serial Wire（否则可能导致芯片自锁）：</h3><p><img src="https://img-blog.csdnimg.cn/a163ea11d7d64a3aa2d7bff932b64c7e.png" alt="Debug设置成Serial Wire"></p>
+<h3 id="时钟树配置："><a href="#时钟树配置：" class="headerlink" title="时钟树配置："></a>时钟树配置：</h3><p><img src="https://img-blog.csdnimg.cn/db970f2364b64b8cbc3b76fe2bccf04f.png" alt="时钟树配置"></p>
+<h3 id="SPI1配置半双工（全双工）：作为OLED的通讯方式：（注意配置）"><a href="#SPI1配置半双工（全双工）：作为OLED的通讯方式：（注意配置）" class="headerlink" title="SPI1配置半双工（全双工）：作为OLED的通讯方式：（注意配置）"></a>SPI1配置半双工（全双工）：作为OLED的通讯方式：（注意配置）</h3><p><strong>&emsp;&emsp;半双工：</strong><br><img src="https://img-blog.csdnimg.cn/95f16dd2bcb346a8b24a115c55ce0dd7.png" alt="SPI1配置半双工"><br><strong>&emsp;&emsp;全双工：</strong><br><img src="https://img-blog.csdnimg.cn/7da21c305c2949de8399c17ae0540e1b.png" alt="SPI1配置全双工"></p>
+<h3 id="DMA配置："><a href="#DMA配置：" class="headerlink" title="DMA配置："></a>DMA配置：</h3><p><img src="https://img-blog.csdnimg.cn/65c0c9fd905d4d86989d3e4f3eac5d65.png" alt="DMA配置"></p>
+<h3 id="工程配置："><a href="#工程配置：" class="headerlink" title="工程配置："></a>工程配置：</h3><p><img src="https://img-blog.csdnimg.cn/abde58d25e62430092db882a905a3ee8.png" alt="工程命名"><br>&emsp;&emsp;<strong>这里我们不用的库不加，减小代码体积</strong><br><img src="https://img-blog.csdnimg.cn/1867710e32f34461a8250322ca52dc9f.png" alt="工程配置"><br><strong>然后生成</strong></p>
+<h2 id="U8g2移植"><a href="#U8g2移植" class="headerlink" title="U8g2移植"></a>U8g2移植</h2><h3 id="准备U8g2库文件"><a href="#准备U8g2库文件" class="headerlink" title="准备U8g2库文件"></a>准备U8g2库文件</h3><ul>
+<li><code>准备U8g2库文件----------&gt;U8g2下载地址: https://github.com/olikraus/u8g2    下载压缩包</code></li>
+<li><code>Git用----------&gt;git clone https://ghproxy.com/https://github.com/olikraus/u8g2.git</code></li>
+</ul>
+<h3 id="精简U8g2库文件"><a href="#精简U8g2库文件" class="headerlink" title="精简U8g2库文件"></a>精简U8g2库文件</h3><ul>
+<li>U8g2支持多种显示驱动的屏幕，因为源码中也包含了各个驱动对应的文件（因此不需要自己去写屏幕底层驱动了），为了减小整个工程的代码体积和芯片资源占用，在移植U8g2时，可以删除一些无用的文件。</li>
+<li>这里我们主要关注的是U8g2库文件中的<strong>csrc文件夹</strong> <img src="https://img-blog.csdnimg.cn/f2f679bd6ab448228be9c75adecaacad.png" alt="csrc文件夹"></li>
+</ul>
+<h4 id="去掉csrc文件夹中无用的驱动文件"><a href="#去掉csrc文件夹中无用的驱动文件" class="headerlink" title="去掉csrc文件夹中无用的驱动文件"></a>去掉csrc文件夹中无用的驱动文件</h4><p>&emsp;&emsp;这些驱动文件通常是<strong>u8x8_d_xxx.c</strong>，<strong>xxx</strong>包括<strong>驱动的型号</strong>和<strong>屏幕分辨率</strong>。<strong>ssd1306</strong>驱动芯片的OLED，使用<strong>u8x8_ssd1306_128x64_noname.c</strong>这个文件，其它的屏幕驱动和分辨率的文件可以删掉。<br><img src="https://img-blog.csdnimg.cn/c71c9005d94a4a78b8ad7aa884173549.png" alt="去掉csrc文件夹中无用的驱动文件"><br><strong>u8x8_d_xxx.c</strong>文件中留下<strong>u8x8_ssd1306_128x64_noname.c</strong>即可</p>
+<h4 id="精简u8g2-d-setup-c（注意不是u8x8-setup-c）"><a href="#精简u8g2-d-setup-c（注意不是u8x8-setup-c）" class="headerlink" title="精简u8g2_d_setup.c（注意不是u8x8_setup.c）"></a>精简u8g2_d_setup.c（注意不是u8x8_setup.c）</h4><p>&emsp;&emsp;由于本文使用的OLED是<strong>SPI</strong>接口，只留一个本次要用到<strong>u8g2_Setup_ssd1306_128x64_noname_f</strong>就好（如果是<strong>IIC</strong>接口，需要使用<strong>u8g2_Setup_ssd1306_i2c_128x64_noname_f</strong>这个函数，<strong>多了i2c</strong>注意区分），其它的可以删掉或注释掉。<br><img src="https://img-blog.csdnimg.cn/4f1653309e1f41108c3733a396ad282b.png" alt="精简u8g2_d_setup.c"></p>
+<blockquote>
+<p>注意，与这个函数看起来十分相似的函数的有：</p>
+<ul>
+<li>u8g2_Setup_ssd1306_128x64_noname_1 </li>
+<li>u8g2_Setup_ssd1306_128x64_noname_2</li>
+<li><strong>u8g2_Setup_ssd1306_128x64_noname_f</strong></li>
+<li>u8g2_Setup_ssd1306_i2c_128x64_noname_1</li>
+<li>u8g2_Setup_ssd1306_i2c_128x64_noname_2</li>
+<li>u8g2_Setup_ssd1306_i2c_128x64_noname_f</li>
+</ul>
+<p>其中，前面3个，是给<strong>SPI</strong>接口的OLED用的，后面3个，是给<strong>I2C</strong>用的函数最后的数字或字母，代表显示时的buf大小：</p>
+<ul>
+<li>1：128字节</li>
+<li>2：256字节</li>
+<li><strong>f：1024字节</strong></li>
+</ul>
+</blockquote>
+<h4 id="精简u8g2-d-memory-c"><a href="#精简u8g2-d-memory-c" class="headerlink" title="精简u8g2_d_memory.c"></a>精简u8g2_d_memory.c</h4><p>&emsp;&emsp;<strong>u8g2_d_memory.c</strong>文件中，由于用到的<strong>u8g2_Setup_ssd1306_128x64_noname_f</strong>函数中，只调用了<strong>u8g2_m_16_8_f</strong>这个函数，所以只用留下这个函数，如果你用的其他函数，在<strong>u8g2_d_memory.c</strong>留下它相对应调用到的函数即可，<strong>其它的函数要删掉或注释</strong>，否则编译时很可能会导致<strong>内存不足</strong>。<br><img src="https://img-blog.csdnimg.cn/62fefd3f5d65419bb777a50ca9d52213.png" alt="其它的函数要删掉或注释"><br><img src="https://img-blog.csdnimg.cn/2cc6547d7ea349a7b6ccd5082895b3a6.png" alt="精简u8g2_d_memory.c"></p>
+<h3 id="将精简后的U8g2库添加至Keil"><a href="#将精简后的U8g2库添加至Keil" class="headerlink" title="将精简后的U8g2库添加至Keil"></a>将精简后的U8g2库添加至Keil</h3><p> &emsp;&emsp;Keil工程目录添加<strong>精简后U8g2库文件中的csrc</strong>文件夹，然后再添加U8g2的头文件搜寻目录（U8g2_lib里都是csrc文件里面的文件，可以根据自己的需要删减），如下：<br><img src="https://img-blog.csdnimg.cn/ed4690cfa2674fb0aba706b7e96e9158.png" alt="将精简后的U8g2库添加至Keil"><br><img src="https://img-blog.csdnimg.cn/9a6127b26e8941e5811c2c553b0be35e.png" alt="精简后U8g2库"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="Oled回调函数"><a href="#Oled回调函数" class="headerlink" title="Oled回调函数"></a>Oled回调函数</h3><p><strong>oled_driver.c：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;oled_driver.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdlib.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;spi.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;dma.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;u8g2.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">uint8_t</span> <span class="title function_">u8x8_byte_4wire_hw_spi</span><span class="params">(<span class="type">u8x8_t</span> *u8x8, <span class="type">uint8_t</span> msg, <span class="type">uint8_t</span> arg_int,<span class="type">void</span> *arg_ptr)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">switch</span> (msg)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_BYTE_SEND: <span class="comment">/*通过SPI发送arg_int个字节数据*/</span></span><br><span class="line"><span class="comment">//           HAL_SPI_Transmit_DMA(&amp;hspi1, (uint8_t *)arg_ptr, arg_int);while(hspi1.TxXferCount);</span></span><br><span class="line">			<span class="comment">/*配置了DMA取消上一行注释即可*/</span></span><br><span class="line">			HAL_SPI_Transmit(&amp;hspi1,(<span class="type">uint8_t</span> *)arg_ptr,arg_int,<span class="number">200</span>);</span><br><span class="line">			<span class="comment">/*这是CubeMX生成的初始化*/</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_BYTE_INIT: <span class="comment">/*初始化函数*/</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_BYTE_SET_DC: <span class="comment">/*设置DC引脚,表明发送的是数据还是命令*/</span></span><br><span class="line">			HAL_GPIO_WritePin(OLED_DC_GPIO_Port,OLED_DC_Pin,arg_int);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_BYTE_START_TRANSFER: </span><br><span class="line">            u8x8_gpio_SetCS(u8x8, u8x8-&gt;display_info-&gt;chip_enable_level);</span><br><span class="line">            u8x8-&gt;gpio_and_delay_cb(u8x8, U8X8_MSG_DELAY_NANO, u8x8-&gt;display_info-&gt;post_chip_enable_wait_ns, <span class="literal">NULL</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_BYTE_END_TRANSFER: </span><br><span class="line">            u8x8-&gt;gpio_and_delay_cb(u8x8, U8X8_MSG_DELAY_NANO, u8x8-&gt;display_info-&gt;pre_chip_disable_wait_ns, <span class="literal">NULL</span>);</span><br><span class="line">            u8x8_gpio_SetCS(u8x8, u8x8-&gt;display_info-&gt;chip_disable_level);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">uint8_t</span> <span class="title function_">u8x8_stm32_gpio_and_delay</span><span class="params">(U8X8_UNUSED <span class="type">u8x8_t</span> *u8x8,</span></span><br><span class="line"><span class="params">    U8X8_UNUSED <span class="type">uint8_t</span> msg, U8X8_UNUSED <span class="type">uint8_t</span> arg_int,</span></span><br><span class="line"><span class="params">    U8X8_UNUSED <span class="type">void</span> *arg_ptr)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">switch</span> (msg)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_GPIO_AND_DELAY_INIT: <span class="comment">/*delay和GPIO的初始化，在main中已经初始化完成了*/</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_DELAY_MILLI: <span class="comment">/*延时函数*/</span></span><br><span class="line">            HAL_Delay(arg_int);     <span class="comment">//调用谁stm32系统延时函数</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_GPIO_CS: <span class="comment">/*片选信号*/</span> <span class="comment">//由于只有一个SPI设备，所以片选信号在初始化时已经设置为常有效</span></span><br><span class="line">            HAL_GPIO_WritePin(OLED_CS_GPIO_Port, OLED_CS_Pin, arg_int);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_GPIO_DC: <span class="comment">/*设置DC引脚,表明发送的是数据还是命令*/</span></span><br><span class="line">            HAL_GPIO_WritePin(OLED_DC_GPIO_Port,OLED_DC_Pin,arg_int);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> U8X8_MSG_GPIO_RESET:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">u8g2Init</span><span class="params">(<span class="type">u8g2_t</span> *u8g2)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">/********************************************     </span></span><br><span class="line"><span class="comment">U8G2_R0     //不旋转，不镜像     </span></span><br><span class="line"><span class="comment">U8G2_R1     //旋转90度</span></span><br><span class="line"><span class="comment">U8G2_R2     //旋转180度   </span></span><br><span class="line"><span class="comment">U8G2_R3     //旋转270度</span></span><br><span class="line"><span class="comment">U8G2_MIRROR   //没有旋转，横向显示左右镜像</span></span><br><span class="line"><span class="comment">U8G2_MIRROR_VERTICAL    //没有旋转，竖向显示镜像</span></span><br><span class="line"><span class="comment">********************************************/</span></span><br><span class="line"><span class="comment">//    u8g2_Setup_sh1106_128x64_noname_2(u8g2, U8G2_R0, u8x8_byte_4wire_hw_spi, u8x8_stm32_gpio_and_delay);  // 初始化1.3寸OLED u8g2 结构体</span></span><br><span class="line">	u8g2_Setup_ssd1306_128x64_noname_f(u8g2, U8G2_R0, u8x8_byte_4wire_hw_spi, u8x8_stm32_gpio_and_delay);  <span class="comment">// 初始化0.96寸OLED u8g2 结构体</span></span><br><span class="line">	u8g2_InitDisplay(u8g2);     <span class="comment">//初始化显示</span></span><br><span class="line">	u8g2_SetPowerSave(u8g2, <span class="number">0</span>); <span class="comment">//开启显示</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*官方logo的Demo*/</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">draw</span><span class="params">(<span class="type">u8g2_t</span> *u8g2)</span></span><br><span class="line">&#123;</span><br><span class="line">    u8g2_SetFontMode(u8g2, <span class="number">1</span>); <span class="comment">/*字体模式选择*/</span></span><br><span class="line">    u8g2_SetFontDirection(u8g2, <span class="number">0</span>); <span class="comment">/*字体方向选择*/</span></span><br><span class="line">    u8g2_SetFont(u8g2, u8g2_font_inb24_mf); <span class="comment">/*字库选择*/</span></span><br><span class="line">    u8g2_DrawStr(u8g2, <span class="number">0</span>, <span class="number">20</span>, <span class="string">&quot;U&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    u8g2_SetFontDirection(u8g2, <span class="number">1</span>);</span><br><span class="line">    u8g2_SetFont(u8g2, u8g2_font_inb30_mn);</span><br><span class="line">    u8g2_DrawStr(u8g2, <span class="number">21</span>,<span class="number">8</span>,<span class="string">&quot;8&quot;</span>);</span><br><span class="line">        </span><br><span class="line">    u8g2_SetFontDirection(u8g2, <span class="number">0</span>);</span><br><span class="line">    u8g2_SetFont(u8g2, u8g2_font_inb24_mf);</span><br><span class="line">    u8g2_DrawStr(u8g2, <span class="number">51</span>,<span class="number">30</span>,<span class="string">&quot;g&quot;</span>);</span><br><span class="line">    u8g2_DrawStr(u8g2, <span class="number">67</span>,<span class="number">30</span>,<span class="string">&quot;\xb2&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    u8g2_DrawHLine(u8g2, <span class="number">2</span>, <span class="number">35</span>, <span class="number">47</span>);</span><br><span class="line">    u8g2_DrawHLine(u8g2, <span class="number">3</span>, <span class="number">36</span>, <span class="number">47</span>);</span><br><span class="line">    u8g2_DrawVLine(u8g2, <span class="number">45</span>, <span class="number">32</span>, <span class="number">12</span>);</span><br><span class="line">    u8g2_DrawVLine(u8g2, <span class="number">46</span>, <span class="number">33</span>, <span class="number">12</span>);</span><br><span class="line">  </span><br><span class="line">    u8g2_SetFont(u8g2, u8g2_font_4x6_tr);</span><br><span class="line">    u8g2_DrawStr(u8g2, <span class="number">1</span>,<span class="number">54</span>,<span class="string">&quot;github.com/olikraus/u8g2&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/********************************* end_of_file **********************************/</span></span><br></pre></td></tr></table></figure>
+<p>GPIO定义的时候在CubeMX<strong>设置别名</strong>能更容易的切换IO口，CS拉高，如下<br><img src="https://img-blog.csdnimg.cn/c0cdcfeb0f984979ab7f43925b65f3e8.png" alt="GPIO设置别名"><br><strong>oled_driver.h：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __MD_OLED_DRIVER_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __MD_OLED_DRIVER_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;stdlib.h&quot;</span>	  </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;gpio.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;u8g2.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//-----------------OLED端口定义----------------  					   </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MD_OLED_RST_Clr() HAL_GPIO_WritePin(OLED_RES_GPIO_Port,OLED_RES_Pin,GPIO_PIN_RESET) <span class="comment">//oled 复位端口操作</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MD_OLED_RST_Set() HAL_GPIO_WritePin(OLED_RES_GPIO_Port,OLED_RES_Pin,GPIO_PIN_SET)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//OLED控制用函数</span></span><br><span class="line"><span class="type">uint8_t</span> <span class="title function_">u8x8_byte_4wire_hw_spi</span><span class="params">(<span class="type">u8x8_t</span> *u8x8, <span class="type">uint8_t</span> msg, <span class="type">uint8_t</span> arg_int,<span class="type">void</span> *arg_ptr)</span>;</span><br><span class="line"><span class="type">uint8_t</span> <span class="title function_">u8x8_stm32_gpio_and_delay</span><span class="params">(U8X8_UNUSED <span class="type">u8x8_t</span> *u8x8,U8X8_UNUSED <span class="type">uint8_t</span> msg, U8X8_UNUSED <span class="type">uint8_t</span> arg_int,U8X8_UNUSED <span class="type">void</span> *arg_ptr)</span> ;</span><br><span class="line"><span class="type">void</span> <span class="title function_">u8g2Init</span><span class="params">(<span class="type">u8g2_t</span> *u8g2)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">draw</span><span class="params">(<span class="type">u8g2_t</span> *u8g2)</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span>  </span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;上述编写的移植函数代码属于HAL库下的代码，标准库的代码其实差不多，有个别地方需要注意修改。有一定MCU编程基础的朋友应该很简单就可以做到仿写。移植代码的本质：这些函数代码就是对应的U8g2图形库的接口函数，通过这些函数去启用U8g2图形库。</p>
+<h3 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//记得引用#include &quot;u8g2.h&quot;</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END 1 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* MCU Configuration--------------------------------------------------------*/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset of all peripherals, Initializes the Flash interface and the Systick. */</span></span><br><span class="line">  HAL_Init();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN Init */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END Init */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Configure the system clock */</span></span><br><span class="line">  SystemClock_Config();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN SysInit */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END SysInit */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Initialize all configured peripherals */</span></span><br><span class="line">  MX_GPIO_Init();</span><br><span class="line">  MX_DMA_Init();</span><br><span class="line">  MX_SPI1_Init();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Initialize interrupts */</span></span><br><span class="line">  MX_NVIC_Init();</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  <span class="type">u8g2_t</span> u8g2; <span class="comment">// 显示器初始化结构体</span></span><br><span class="line">  MD_OLED_RST_Set(); <span class="comment">//显示器复位拉高</span></span><br><span class="line">  u8g2Init(&amp;u8g2);   <span class="comment">//显示器调用初始化函数</span></span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">       u8g2_FirstPage(&amp;u8g2);</span><br><span class="line">       <span class="keyword">do</span></span><br><span class="line">       &#123;</span><br><span class="line">   			draw(&amp;u8g2);</span><br><span class="line">           </span><br><span class="line">       &#125; <span class="keyword">while</span> (u8g2_NextPage(&amp;u8g2));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p><img src="https://img-blog.csdnimg.cn/d2087b1b1d3f4c98ae7477361ed54430.jpeg" alt="U8g2最终效果"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p> &emsp;&emsp;U8g2图形库可以说目前小尺寸OLED首选的GUI，其可以呈现出的图形远不止上述中的图形，更多的功能还需要读者朋友们自己去好好发掘。优秀GUI的移植是一名合格嵌入式工程师必须掌握的技能之一，其可以达到大大缩短开发周期，优化UI界面等目的。LCD屏幕也存在类似的优秀开源GUI库，后续笔者会进行更新，感兴趣的读者朋友可以点波关注，感谢！！！</p>
+<p>————————————————</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/black_sneak/article/details/126312657">https://blog.csdn.net/black_sneak&#x2F;article&#x2F;details&#x2F;126312657</a></p>
+<ul>
+<li>开源代码：<a target="_blank" rel="noopener" href="https://gitee.com/ljs_ice/STM32_u8g2">https://gitee.com/ljs_ice&#x2F;STM32_u8g2</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/U8g2/" rel="tag"># U8g2</a>
+              <a href="/tags/STM32/" rel="tag"># STM32</a>
+              <a href="/tags/CubeMX/" rel="tag"># CubeMX</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/04/15/HexoEditor%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="prev" title="HexoEditor快捷键">
+      <i class="fa fa-chevron-left"></i> HexoEditor快捷键
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/04/20/U8g2%E5%9B%BE%E5%BD%A2%E5%BA%93%E6%98%BE%E7%A4%BA%E5%8F%98%E9%87%8F%EF%BC%88%E6%95%B0%E5%AD%97%EF%BC%89/" rel="next" title="U8g2图形库显示变量（数字）">
+      U8g2图形库显示变量（数字） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#U8g2%E5%BA%93%E7%9A%84STM32%E7%A1%AC%E4%BB%B6SPI%E7%A7%BB%E6%A4%8D%E6%95%99%E7%A8%8B%EF%BC%88HAL%E3%80%81OLED%E6%98%BE%E7%A4%BA%E3%80%81%E5%9B%9B%E7%BA%BFSPI%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">U8g2库的STM32硬件SPI移植教程（HAL、OLED显示、四线SPI）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U8g2%E7%AE%80%E4%BB%8B%EF%BC%88%E5%87%BA%E8%87%AA%E6%AD%A4%E7%AF%87%E5%9F%BA%E4%BA%8ESTM32%E7%A7%BB%E6%A4%8DU8g2%E5%9B%BE%E5%BD%A2%E5%BA%93%E2%80%94%E2%80%94OLED%E6%98%BE%E7%A4%BA%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">U8g2简介（出自此篇基于STM32移植U8g2图形库——OLED显示）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#U8g2%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.2.1.</span> <span class="nav-text">U8g2是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#U8g2%E6%94%AF%E6%8C%81%E7%9A%84%E6%98%BE%E7%A4%BA%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">U8g2支持的显示控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#U8g2%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-number">1.2.3.</span> <span class="nav-text">U8g2的优势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CubexMX%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">CubexMX的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RCC%E9%85%8D%E7%BD%AE%E5%A4%96%E9%83%A8%E9%AB%98%E9%80%9F%E6%99%B6%E6%8C%AF%EF%BC%88%E7%B2%BE%E5%BA%A6%E6%9B%B4%E9%AB%98%EF%BC%89%E2%80%94%E2%80%94HSE%EF%BC%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">RCC配置外部高速晶振（精度更高）——HSE：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SYS%E9%85%8D%E7%BD%AE%EF%BC%9ADebug%E8%AE%BE%E7%BD%AE%E6%88%90Serial-Wire%EF%BC%88%E5%90%A6%E5%88%99%E5%8F%AF%E8%83%BD%E5%AF%BC%E8%87%B4%E8%8A%AF%E7%89%87%E8%87%AA%E9%94%81%EF%BC%89%EF%BC%9A"><span class="nav-number">1.3.2.</span> <span class="nav-text">SYS配置：Debug设置成Serial Wire（否则可能导致芯片自锁）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%92%9F%E6%A0%91%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.3.3.</span> <span class="nav-text">时钟树配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SPI1%E9%85%8D%E7%BD%AE%E5%8D%8A%E5%8F%8C%E5%B7%A5%EF%BC%88%E5%85%A8%E5%8F%8C%E5%B7%A5%EF%BC%89%EF%BC%9A%E4%BD%9C%E4%B8%BAOLED%E7%9A%84%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F%EF%BC%9A%EF%BC%88%E6%B3%A8%E6%84%8F%E9%85%8D%E7%BD%AE%EF%BC%89"><span class="nav-number">1.3.4.</span> <span class="nav-text">SPI1配置半双工（全双工）：作为OLED的通讯方式：（注意配置）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DMA%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.3.5.</span> <span class="nav-text">DMA配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.3.6.</span> <span class="nav-text">工程配置：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U8g2%E7%A7%BB%E6%A4%8D"><span class="nav-number">1.4.</span> <span class="nav-text">U8g2移植</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87U8g2%E5%BA%93%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.1.</span> <span class="nav-text">准备U8g2库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%BE%E7%AE%80U8g2%E5%BA%93%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.2.</span> <span class="nav-text">精简U8g2库文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89csrc%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E6%97%A0%E7%94%A8%E7%9A%84%E9%A9%B1%E5%8A%A8%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">去掉csrc文件夹中无用的驱动文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B2%BE%E7%AE%80u8g2-d-setup-c%EF%BC%88%E6%B3%A8%E6%84%8F%E4%B8%8D%E6%98%AFu8x8-setup-c%EF%BC%89"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">精简u8g2_d_setup.c（注意不是u8x8_setup.c）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B2%BE%E7%AE%80u8g2-d-memory-c"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">精简u8g2_d_memory.c</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E7%B2%BE%E7%AE%80%E5%90%8E%E7%9A%84U8g2%E5%BA%93%E6%B7%BB%E5%8A%A0%E8%87%B3Keil"><span class="nav-number">1.4.3.</span> <span class="nav-text">将精简后的U8g2库添加至Keil</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.5.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Oled%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.1.</span> <span class="nav-text">Oled回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.2.</span> <span class="nav-text">main函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="nav-number">1.6.</span> <span class="nav-text">最终效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
