@@ -1,2 +1,2 @@
 # 个人Blog
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c5880a39-bdf6-45d2-819d-9536e1c4ecc7/deploy-status)](https://app.netlify.com/sites/hongdoulc/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c98ab075-f496-47aa-9e69-acb5a8dc9ba0/deploy-status)](https://app.netlify.com/sites/hongdoulc/deploys)
